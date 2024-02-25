@@ -1,0 +1,54 @@
+@import './branding';
+
+.episode {
+  &__header {
+    position: relative;
+    display: inline-block;
+    border: 6px solid $brand-color-light;
+
+    .playable {
+      &__button {
+        top: 8px;
+        left: 8px;
+      }
+    }
+
+    .statistics {
+      background-color: $brand-color-light;
+      font-size: 0.9rem;
+
+      &__count {
+        padding-left: 1.3rem;
+        background-position: left;
+        background-repeat: no-repeat;
+      }
+
+      &__likes {
+        background-image: url(/images/icons/heart.svg);
+      }
+
+      &__reposts {
+        background-image: url(/images/icons/repost.svg);
+      }
+    }
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  pre {
+    font-family: $brand-font-secondary, sans-serif;
+    text-wrap: wrap;
+  }
+
+  .card-body {
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  .nav-link {
+    color: $brand-color-dark;
+  }
+}
