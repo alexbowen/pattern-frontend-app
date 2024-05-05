@@ -1,14 +1,12 @@
 'use client'
 
-import '../styles/globals.scss';
-import styles from '../styles/main.module.scss'
+import '../globals.scss';
+import styles from './styles/player.module.scss'
 
 import { memo } from 'react';
-import { useCart } from '../app/PlayerContext';
+import { useCart } from './playerContext';
 
-export type Params = { url?: string }
-
-const Player = memo(function Player( params: Params ) {
+const Player = memo(function Player() {
 
   const [cart] = useCart();
 

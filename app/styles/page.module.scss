@@ -1,0 +1,31 @@
+@import './branding';
+@import './bootstrap';
+
+.row {
+
+  .orange {
+    background: url('/images/brand/patterns_01_tile.png') repeat;
+
+    h1 {
+      color:$brand-color-secondary;
+    }
+
+    h3 {
+      color: $brand-color-secondary;
+      // @include font-size(2rem);
+    }
+
+    .content-area {
+      background-color: $brand-color-white;
+      padding: 1rem;
+    }
+  }
+
+  .footer {
+    background-color: $brand-color-light;
+
+    p, a {
+      // @include font-size(0.8rem);
+    }
+  }
+}

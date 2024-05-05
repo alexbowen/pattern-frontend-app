@@ -1,8 +1,8 @@
 'use client'
 
-import { useCart } from "../../app/PlayerContext";
+import { useCart } from "../playerContext";
 
-export default function Play(props) {
+export default function Play(props: any) {
 
   const [, setCart] = useCart();
 

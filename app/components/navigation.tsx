@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-import tags from '../styles/tags.module.scss'
+import tags from '../../styles/tags.module.scss'
 
-import '../styles/globals.scss';
+import '../globals.scss';
 
 export default function Navigation() {
   return (

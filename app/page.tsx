@@ -1,31 +1,7 @@
-import '../styles/globals.scss';
-import styles from '../styles/main.module.scss'
-
-// import { useState } from 'react'
-
-
-import List from '../components/episodes/list'
-import Player from '../components/player'
-
-// import PlayerContext from './playerContext'
-// import { setUrl } from '../components/player'
-// import { setUrl } from '../components/episodes/item'
-
-// export const setUrl = (state, props) => ({
-//   url: state.url
-// });
+import styles from './styles/page.module.scss'
+import List from './components/episodes/list'
 
 export default function Home() {
-  // const [player, setPlayer] = useState('google.com');
-  // // const [count, setCount] = useState({ value: 0 });
-
-  // function setUrl(player) {
-  //   setPlayer(player)
-  // }
-
-  // const handleSetUrl = () => setPlayer(setUrl);
-
-
   return (
 
     <div className="container-fluid">
@@ -52,7 +28,6 @@ export default function Home() {
               </div>
               <a data-action="click->navigation#navigate" className="nav-link" href="/browse">Browse all shows</a>
             </div>
-            
             
             <List offset={ 0 } limit={ 6 } creator={ 'internal' } />
 

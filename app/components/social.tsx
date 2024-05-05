@@ -1,6 +1,6 @@
-import social from '../styles/social.module.scss'
+import social from './styles/social.module.scss'
 
-import '../styles/globals.scss';
+import '../globals.scss';
 
 export default function SocialToolbar() {
   return (

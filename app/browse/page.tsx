@@ -1,12 +1,6 @@
-"use client"
-
-import '../../styles/globals.scss';
-
-import List from '../../components/episodes/list'
-
+import List from '../components/episodes/list'
 
 export default function Browse() {
-
   return (
     <div className="container-fluid gx-4 gx-sm-5">
       <div className="row">

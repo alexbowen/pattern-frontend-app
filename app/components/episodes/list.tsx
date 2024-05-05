@@ -1,4 +1,4 @@
-import '../../styles/globals.scss';
+import '../../globals.scss';
 
 import Item from './item'
 

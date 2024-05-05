@@ -1,15 +1,14 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 
-import PlayerProvider from "./PlayerContext";
+import PlayerProvider from "./components/playerContext";
 
-import '../styles/globals.scss';
-import styles from '../styles/main.module.scss'
+import styles from './styles/app.module.scss';
 
-import SocialToolbar from '../components/social'
-import Player from '../components/player'
-import Navigation from '../components/navigation'
-import Preferences from '../components/preferences'
+import SocialToolbar from './components/social'
+import Player from './components/player'
+import Navigation from './components/navigation'
+import Preferences from './components/preferences'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.patternradio.net'),
@@ -32,55 +31,55 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <PlayerProvider>
-        <header className={ styles.header }>
-          <nav className={`${ styles.navigation } navbar navbar-expand-md navbar-dark bg-dark py-2`}>
-            <div className="container-fluid">
-              <a className="navbar-brand" href="/">
-                <img src="/images/brand/logo_white.png" height="55" width="55"/>
-              </a>
+        <PlayerProvider>
+          <header className={ styles.header }>
+            <nav className={`${ styles.navigation } navbar navbar-expand-md navbar-dark bg-dark py-2`}>
+              <div className="container-fluid">
+                <a className="navbar-brand" href="/">
+                  <img src="/images/brand/logo_white.png" height="55" width="55"/>
+                </a>
 
-              <SocialToolbar />
-            
-              <a className="nav-link toggle-link order-md-2 ps-2" data-bs-toggle="collapse" data-bs-target=".multi-collapse" href="#filter-controls" role="button" aria-expanded="false" aria-controls="filter-controls">
-                Preferences
-                <span className="filters-selected-status" data-filters-target="status"></span>
-                <span className="toggle-link__icon"></span>
-              </a>
+                <SocialToolbar />
+              
+                <a className="nav-link toggle-link order-md-2 ps-2" data-bs-toggle="collapse" data-bs-target=".multi-collapse" href="#filter-controls" role="button" aria-expanded="false" aria-controls="filter-controls">
+                  Preferences
+                  <span className="filters-selected-status" data-filters-target="status"></span>
+                  <span className="toggle-link__icon"></span>
+                </a>
 
-              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarnavdropdown" aria-controls="navbarnavdropdown" aria-expanded="false" aria-label="toggle navigation" data-filters-target="indicator">
-                <span className="navbar-toggler-icon"></span>
-              </button>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarnavdropdown" aria-controls="navbarnavdropdown" aria-expanded="false" aria-label="toggle navigation" data-filters-target="indicator">
+                  <span className="navbar-toggler-icon"></span>
+                </button>
 
-              <div className="collapse navbar-collapse pt-3 pt-md-0" id="navbarnavdropdown">
-                <Navigation></Navigation>
+                <div className="collapse navbar-collapse pt-3 pt-md-0" id="navbarnavdropdown">
+                  <Navigation></Navigation>
+                </div>
               </div>
-            </div>
-          </nav>
+            </nav>
 
-          <div className="container-fluid header__dropdown">
+            <div className="container-fluid header__dropdown">
 
-            <div className="collapse multi-collapse scroll-collapse" id="filter-controls" data-filters-target="panel">
-              <div className="filters">
-                <div className="d-md-flex flex-row">
-                  <div className="filters-header">
-                    <Preferences></Preferences>
+              <div className="collapse multi-collapse scroll-collapse" id="filter-controls" data-filters-target="panel">
+                <div className="filters">
+                  <div className="d-md-flex flex-row">
+                    <div className="filters-header">
+                      <Preferences></Preferences>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </header>
+          </header>
 
-        <main className={ styles.main }>
-          <div>{children}</div>
-        </main>
+          <main className={ styles.main }>
+            <div>{children}</div>
+          </main>
 
-        <footer className="container-fluid py-3">
-          <span>&copy; Pattern Radio 2024</span>
-        </footer>
+          <footer className="container-fluid py-3">
+            <span>&copy; Pattern Radio 2024</span>
+          </footer>
 
-        <Player url={'https://www.mixcloud.com/widget/iframe/?hide_cover=1&autoplay=1&feed=/patternradio/the-lightbox-alex-bowen-4-may-2024/'} />
+          <Player />
         </PlayerProvider>
       </body>
 

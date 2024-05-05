@@ -1,14 +1,12 @@
 import Link from 'next/link'
 // import Image from 'next/image'
 
-import '../../styles/globals.scss';
-import episode from '../../styles/episode.module.scss'
-import playable from '../../styles/playable.module.scss'
-import tags from '../../styles/tags.module.scss'
+import '../../globals.scss';
+import episode from './styles/episode.module.scss'
+import playable from './styles/playable.module.scss'
+import tags from '../../../styles/tags.module.scss'
 
 import Play from './play'
-
-import React, { useState, useContext } from 'react';
 
 const showData = (name) => {
   const parts = name.split('-');

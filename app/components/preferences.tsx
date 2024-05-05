@@ -1,6 +1,6 @@
-import filters from '../styles/filters.module.scss'
+import filters from '../../styles/filters.module.scss'
 
-import '../styles/globals.scss';
+import './styles/preferences.module.scss';
 
 export default function Preferences() {
   return (
