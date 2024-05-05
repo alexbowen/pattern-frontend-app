@@ -1,11 +1,15 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import Script from 'next/script'
+
+import PlayerProvider from "./PlayerContext";
 
 import '../styles/globals.scss';
 import styles from '../styles/main.module.scss'
 
 import SocialToolbar from '../components/social'
 import Player from '../components/player'
+import Navigation from '../components/navigation'
+import Preferences from '../components/preferences'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.patternradio.net'),
@@ -28,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+      <PlayerProvider>
         <header className={ styles.header }>
           <nav className={`${ styles.navigation } navbar navbar-expand-md navbar-dark bg-dark py-2`}>
             <div className="container-fluid">
@@ -48,41 +53,42 @@ export default function RootLayout({
               </button>
 
               <div className="collapse navbar-collapse pt-3 pt-md-0" id="navbarnavdropdown">
-                <ul className="navbar-nav justify-content-end flex-grow-1">
-                  <li className="nav-item">
-                    <Link className="nav-link" aria-current="page" href="/">Home</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" aria-current="page" href="/browse">Browse</Link>
-                  </li>
-                  <li className="nav-item">
-                    <a data-action="click->navigation#navigate" className="nav-link" href="/shows">Shows</a>
-                  </li>
-                  <li className="nav-item">
-                    <a data-action="click->navigation#navigate" className="nav-link" href="/live" data-external="true">Live</a>
-                  </li>
-                  <li className="nav-item">
-                    <a data-action="click->navigation#navigate" className="nav-link" href="/posts">Blog</a>
-                  </li>
-                  <li className="nav-item">
-                    <a data-action="click->navigation#navigate" className="nav-link" href="/about">About</a>
-                  </li>
-                </ul>
+                <Navigation></Navigation>
               </div>
             </div>
           </nav>
+
+          <div className="container-fluid header__dropdown">
+
+            <div className="collapse multi-collapse scroll-collapse" id="filter-controls" data-filters-target="panel">
+              <div className="filters">
+                <div className="d-md-flex flex-row">
+                  <div className="filters-header">
+                    <Preferences></Preferences>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </header>
 
         <main className={ styles.main }>
-          {children}
+          <div>{children}</div>
         </main>
 
         <footer className="container-fluid py-3">
           <span>&copy; Pattern Radio 2024</span>
         </footer>
 
-        <Player />
+        <Player url={'https://www.mixcloud.com/widget/iframe/?hide_cover=1&autoplay=1&feed=/patternradio/the-lightbox-alex-bowen-4-may-2024/'} />
+        </PlayerProvider>
       </body>
+
+      <Script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossOrigin="anonymous"
+      />
     </html>
   )
 }

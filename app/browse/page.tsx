@@ -3,7 +3,7 @@
 import '../../styles/globals.scss';
 
 import List from '../../components/episodes/list'
-import { playEpisode } from '../../components/player'
+
 
 export default function Browse() {
 
@@ -30,7 +30,7 @@ export default function Browse() {
           </form>
         </div>
       </div>
-      <List offset={ 0 } limit={ 12 } playEpisodeHandler={ playEpisode } />
+      <List offset={ 0 } limit={ 12 } />
     </div>
   )
 }

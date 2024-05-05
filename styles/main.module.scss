@@ -2,7 +2,7 @@
 @import '../node_modules/bootstrap/scss/mixins';
 
 // @import './episode';
-@import './filters';
+// @import './filters';
 // @import './list';
 @import './post';
 @import './pagination';
@@ -108,7 +108,7 @@
 .playerFooter {
   background-color: #25292c;
   position: fixed;
-  bottom: -20px;
+  bottom: 20px;
   right: 0;
   width: 100%;
 }

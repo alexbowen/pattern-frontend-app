@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 // import Image from 'next/image'
 
@@ -7,6 +5,10 @@ import '../../styles/globals.scss';
 import episode from '../../styles/episode.module.scss'
 import playable from '../../styles/playable.module.scss'
 import tags from '../../styles/tags.module.scss'
+
+import Play from './play'
+
+import React, { useState, useContext } from 'react';
 
 const showData = (name) => {
   const parts = name.split('-');
@@ -22,6 +24,7 @@ const showTitleId = (title) => title.toLowerCase().replace(/ /g, '-')
 const timeToMinutes = (d) => Math.floor(d * 1000 / 60000)
 
 export default function Item(props) {
+
   return (
     <div key={ props.episode.id } className={`${ episode.episode } ${ playable.playable }`}>
       <div className={ episode.episode__header }>
@@ -36,10 +39,7 @@ export default function Item(props) {
 
         <div className={`${ episode.playable__button } ${ playable.playable__button }`}>
           <span className="button">
-            {/* <button onClick={props.playEpisodeHandler(`https://www.mixcloud.com/widget/iframe/?hide_cover=1&autoplay=1&feed=${ props.episode.key }`)}></button> */}
-            <button onClick={async () => {
-      await props.playEpisodeHandler(`https://www.mixcloud.com/widget/iframe/?hide_cover=1&autoplay=1&feed=${ props.episode.key }`);
-    }}></button>
+            <Play url={props.episode.key} />
           </span>
         </div>
 

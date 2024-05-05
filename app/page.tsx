@@ -1,19 +1,33 @@
-"use client"
-
 import '../styles/globals.scss';
 import styles from '../styles/main.module.scss'
 
-// import { useState, useEffect } from 'react'
+// import { useState } from 'react'
+
 
 import List from '../components/episodes/list'
-import { increment, playEpisode } from '../components/player'
+import Player from '../components/player'
+
+// import PlayerContext from './playerContext'
+// import { setUrl } from '../components/player'
+// import { setUrl } from '../components/episodes/item'
+
+// export const setUrl = (state, props) => ({
+//   url: state.url
+// });
 
 export default function Home() {
-  // const [count, setCount] = useState({ value: 0 });
+  // const [player, setPlayer] = useState('google.com');
+  // // const [count, setCount] = useState({ value: 0 });
 
-  // const handleIncrement = () => setCount(increment);
+  // function setUrl(player) {
+  //   setPlayer(player)
+  // }
+
+  // const handleSetUrl = () => setPlayer(setUrl);
+
 
   return (
+
     <div className="container-fluid">
       <div className={`${ styles.row } row mb-3 mb-md-0`}>
         <div className={ styles.orange }>
@@ -40,7 +54,7 @@ export default function Home() {
             </div>
             
             
-            <List offset={ 0 } limit={ 6 } creator={ 'internal' } playEpisodeHandler={ playEpisode } />
+            <List offset={ 0 } limit={ 6 } creator={ 'internal' } />
 
             <div className={`${ styles.footer } d-flex p-2`}>
               <div className="flex-grow-1">
@@ -49,7 +63,7 @@ export default function Home() {
               <a data-action="click->navigation#navigate" className="nav-link" href="/browse">Browse all shows</a>
             </div>
 
-            <List offset={ 0 } limit={ 6 } creator={ 'external' } playEpisodeHandler={ playEpisode } />
+            <List offset={ 0 } limit={ 6 } creator={ 'external' } />
 
           </div>
         </div>
