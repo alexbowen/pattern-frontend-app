@@ -47,9 +47,11 @@ export default function RootLayout({
 
                 <SocialToolbar />
 
+<div className="mx-2 flex-fill">
                 <Suspense fallback={<SearchBarFallback />}>
-                <Search />
+                  <Search />
                 </Suspense>
+                </div>
               
                 <a className="nav-link toggle-link order-md-2 ps-2" data-bs-toggle="collapse" data-bs-target=".multi-collapse" href="#filter-controls" role="button" aria-expanded="false" aria-controls="filter-controls">
                   Preferences

@@ -6,12 +6,32 @@
     display: inline-block;
     border: 6px solid $brand-color-light;
 
-    .playable {
-      &__button {
-        top: 8px;
-        left: 8px;
+    &:hover {
+      .playable {
+        &__button {
+        display:block;
+        }
+      }
+
+      img {
+        opacity: 0.5;
       }
     }
+
+    .playable {
+      
+      &__button {
+        width: 60px;
+        display:none;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        text-align: center;
+      }
+    }
+  }
 
     .statistics {
       background-color: $brand-color-light;
@@ -31,7 +51,7 @@
         background-image: url(/images/icons/repost.svg);
       }
     }
-  }
+  
 
   p {
     padding: 0;
@@ -51,4 +71,6 @@
   .nav-link {
     color: $brand-color-dark;
   }
+
+
 }

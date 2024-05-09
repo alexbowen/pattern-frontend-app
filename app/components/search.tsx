@@ -3,33 +3,28 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, ChangeEvent } from "react";
 
-interface iDefault {
-    defaultValue: string | null
-}
-
 export default function Search() {
 
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
 
-  const initial = searchParams && searchParams.get("q")
+  const initial = searchParams && searchParams.get("q");
 
-  const router = useRouter()
+  const router = useRouter();
 
-  const [inputValue, setValue] = useState(initial)
+  const [inputValue, setValue] = useState(initial);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) =>{
-      const inputValue = event.target.value;
-      setValue(inputValue);
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) =>{
+      setValue(e.target.value);
   }
 
   const handleSearch = (e) => {
     e.preventDefault()
     if (inputValue) return router.push(`/episodes?q=${inputValue}`);
-    if (!inputValue) return router.push("/episodes")
+    if (!inputValue) return router.push("/episodes");
   }
 
-  const handleKeyPress = (event: { key: any; }) => {
-      if (event.key === "Enter") return handleSearch(event)
+  const handleKeyPress = (e: { key: any; }) => {
+      if (e.key === "Enter") return handleSearch(e);
   }
 
   return (

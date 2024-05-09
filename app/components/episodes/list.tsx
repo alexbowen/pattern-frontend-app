@@ -6,8 +6,6 @@ export type Params = { limit: string, offset: string, q?: string, creator?: stri
 
 export default async function List(params: Params) {
 
-  console.log('parama', params)
-
   const response = await fetch(`http://localhost:3000/api/search/?${new URLSearchParams(params)}`, {
     method: 'GET',
   })

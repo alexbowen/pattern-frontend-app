@@ -8,7 +8,7 @@ export default function Navigation() {
   return (
     <ul className="navbar-nav justify-content-end flex-grow-1">
     <li className="nav-item">
-      <Link className="nav-link" aria-current="page" href="/">Home</Link>
+      <Link className="nav-link" aria-current="page" href="/posts">Blog</Link>
     </li>
     {/* <li className="nav-item">
       <Link className="nav-link" aria-current="page" href="/browse">Browse</Link>

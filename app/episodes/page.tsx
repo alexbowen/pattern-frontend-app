@@ -1,15 +1,16 @@
 'use client';
+
 import List from '../components/episodes/list'
 
 import {useSearchParams} from 'next/navigation'
 
-interface TestProps {
+interface SearchProps {
   q: string,
   offset?: string,
   limit?: string,
 }
 
-export default function Browse({offset = '0', limit = '12', q = ''}: TestProps) {
+export default function Browse({offset = '0', limit = '12', q = ''}: SearchProps) {
 
   const searchParams = useSearchParams();
 

@@ -3,7 +3,7 @@
 
 .row {
 
-  .orange {
+  &.primary {
     background: url('/images/brand/patterns_01_tile.png') repeat;
 
     h1 {
@@ -15,14 +15,14 @@
       // @include font-size(2rem);
     }
 
-    .content-area {
+    .content {
       background-color: $brand-color-white;
-      padding: 1rem;
+
     }
   }
 
-  .footer {
-    background-color: $brand-color-light;
+  &.secondary{
+    background-color: $brand-color-medium;
 
     p, a {
       // @include font-size(0.8rem);

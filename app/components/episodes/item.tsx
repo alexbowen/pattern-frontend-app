@@ -36,47 +36,39 @@ export default function Item(props) {
           {/* <Image className="card-img-top" src={ props.episode.pictures.large } alt={ props.episode.name } width={300} height={300} /> */}
 
         <div className={`${ episode.playable__button } ${ playable.playable__button }`}>
-          <span className="button">
-            <Play url={props.episode.key} />
-          </span>
-        </div>
-
-        <div className={`d-flex p-2 pb-0 ${ episode.statistics }`}>
-          <div className="flex-grow-1">
-            <span>{ timeToMinutes(props.episode.audio_length) } min</span>
-          </div>
-
-          { props.episode.favorite_count > 0 && props.episode.user.username === 'patternradio' &&
-          <div className={`${episode.statistics__likes} ${ episode.statistics__count}`}>
-            <span>{ props.episode.favorite_count }</span>
-          </div>
-          }
-
-          { props.episode.repost_count > 0 && props.episode.user.username === 'patternradio' &&
-          <div className={`${episode.statistics__reposts} ${ episode.statistics__count} ms-2` }>
-            <span>{ props.episode.repost_count }</span>
-          </div>
-          }
+          <Play url={props.episode.key} />
         </div>
       </div>
 
-      <div className="card-body">
+      <div className={`d-flex px-2 py-1 ${ episode.statistics }`}>
+        <div className="flex-grow-1">
+          <span>{ timeToMinutes(props.episode.audio_length) } min</span>
+        </div>
+
+        { props.episode.favorite_count > 0 && props.episode.user.username === 'patternradio' &&
+        <div className={`${episode.statistics__likes} ${ episode.statistics__count}`}>
+          <span>{ props.episode.favorite_count }</span>
+        </div>
+        }
+
+        { props.episode.repost_count > 0 && props.episode.user.username === 'patternradio' &&
+        <div className={`${episode.statistics__reposts} ${ episode.statistics__count} ms-2` }>
+          <span>{ props.episode.repost_count }</span>
+        </div>
+        }
+      </div>
+      
+      <div className="p-2">
   
       { props.episode.user.username === 'patternradio'
       ? <div>
-          <h5 className="card-title">
-            <a href="/episode/{{ props.episode.slug }}" className="nav-link mb-1">{ showData(props.episode.name).detail }</a>
-          </h5>
-
-          <h5 className="card-title">
-            { showData(props.episode.name).host }
-          </h5>
-
-          <Link href={`/show/${showTitleId(showData(props.episode.name).title)}`} className="nav-link fs-6">{ showData(props.episode.name).title }</Link>
+          <h4><Link href={`/show/${showTitleId(showData(props.episode.name).title)}`} className="nav-link fs-5">{ showData(props.episode.name).title }</Link></h4>
+          <p>
+            <a href="/episode/{{ props.episode.slug }}" className="nav-link mb-1"><strong>{ showData(props.episode.name).host }</strong> - { showData(props.episode.name).detail }</a>
+          </p>
         </div>
       : <div>
-          <h5 className="card-title">{ showData(props.episode.name).title }</h5>
-          <p className="card-text">{ props.episode.user.name }</p>
+          <p><strong>{ props.episode.user.name }</strong> - { showData(props.episode.name).title }</p>
         </div>
       }
 
@@ -87,6 +79,7 @@ export default function Item(props) {
           </li>
         ))}
         </ul>
+        
       </div>
     </div>
   )

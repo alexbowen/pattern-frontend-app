@@ -1,4 +1,5 @@
 "use client";
+
 import React, { createContext, useState } from "react";
 
 type Cart = { url: string }
@@ -17,7 +18,7 @@ export const PlayerContext = createContext<ReturnType<
 export const usePlayer = () => {
   const cart = React.useContext(PlayerContext);
   if (!cart) {
-    throw new Error("useCart must be used within a PlayerProvider");
+    throw new Error("usePlayer must be used within a PlayerProvider");
   }
   return cart;
 };
