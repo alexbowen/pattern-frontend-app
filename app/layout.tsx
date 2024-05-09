@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Suspense } from 'react'
 
 import PlayerProvider from "./components/playerContext";
 
@@ -8,6 +9,7 @@ import styles from './styles/app.module.scss';
 import SocialToolbar from './components/social'
 import Player from './components/player'
 import Navigation from './components/navigation'
+import Search from './components/search'
 import Preferences from './components/preferences'
 
 export const metadata: Metadata = {
@@ -21,6 +23,10 @@ export const metadata: Metadata = {
     url: '/',
     type: 'music.radio_station',
   },
+}
+
+function SearchBarFallback() {
+  return <>placeholder</>
 }
 
 export default function RootLayout({
@@ -40,6 +46,10 @@ export default function RootLayout({
                 </a>
 
                 <SocialToolbar />
+
+                <Suspense fallback={<SearchBarFallback />}>
+                <Search />
+                </Suspense>
               
                 <a className="nav-link toggle-link order-md-2 ps-2" data-bs-toggle="collapse" data-bs-target=".multi-collapse" href="#filter-controls" role="button" aria-expanded="false" aria-controls="filter-controls">
                   Preferences

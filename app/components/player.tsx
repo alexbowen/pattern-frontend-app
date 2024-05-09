@@ -4,11 +4,11 @@ import '../globals.scss';
 import styles from './styles/player.module.scss'
 
 import { memo } from 'react';
-import { useCart } from './playerContext';
+import { usePlayer } from './playerContext';
 
 const Player = memo(function Player() {
 
-  const [cart] = useCart();
+  const [cart] = usePlayer();
 
   return (
     <div className={ styles.playerFooter }>

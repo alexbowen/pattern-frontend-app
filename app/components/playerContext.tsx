@@ -3,28 +3,30 @@ import React, { createContext, useState } from "react";
 
 type Cart = { url: string }
 
-const useCartState = () =>
+const usePlayerState = () =>
   useState({
-    url: 'https://embed.radio.co/player/b84cf70.html',
+    url: '',
   });
 
+  // https://embed.radio.co/player/b84cf70.html
+
 export const PlayerContext = createContext<ReturnType<
-  typeof useCartState
+  typeof usePlayerState
 > | null>(null);
 
-export const useCart = () => {
+export const usePlayer = () => {
   const cart = React.useContext(PlayerContext);
   if (!cart) {
-    throw new Error("useCart must be used within a CartProvider");
+    throw new Error("useCart must be used within a PlayerProvider");
   }
   return cart;
 };
 
 const PlayerProvider = ({ children }: { children: React.ReactNode }) => {
-  const [cart, setCart] = useCartState();
+  const [player, setPlayer] = usePlayerState();
 
   return (
-    <PlayerContext.Provider value={[cart, setCart]}>
+    <PlayerContext.Provider value={[player, setPlayer]}>
       {children}
     </PlayerContext.Provider>
   );

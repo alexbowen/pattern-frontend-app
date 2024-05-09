@@ -1,0 +1,41 @@
+'use client';
+import List from '../components/episodes/list'
+
+import {useSearchParams} from 'next/navigation'
+
+interface TestProps {
+  q: string,
+  offset?: string,
+  limit?: string,
+}
+
+export default function Browse({offset = '0', limit = '12', q = ''}: TestProps) {
+
+  const searchParams = useSearchParams();
+
+  const query = searchParams && searchParams.get("q") ? searchParams.get("q")! : q;
+
+  return (
+    <div className="container-fluid gx-4 gx-sm-5">
+      <div className="row">
+        <div className="col-12 col-md-9">
+          <div className="list__heading row pt-0 pb-2">
+            <div className="col-12">
+              <h3 className="mb-0" data-heading-target="title">{ query ? <span>Search Results for '{ query }'</span> : <span>Browse Shows</span> }</h3>
+            </div>
+            <div className="col-12">
+              <span className="d-none" data-heading-target="preferences">
+                (Preferences Applied)
+                <button className="reset" data-heading-target="reset" data-action="click->episodes#clearFilters">reset</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-md-3 mb-3 mb-md-0">
+          Pagination
+        </div>
+      </div>
+      <List offset={ offset } limit={ limit } q={ query } />
+    </div>
+  )
+}

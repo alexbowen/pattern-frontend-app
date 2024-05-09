@@ -10,7 +10,7 @@ export default function Navigation() {
     <li className="nav-item">
       <Link className="nav-link" aria-current="page" href="/">Home</Link>
     </li>
-    <li className="nav-item">
+    {/* <li className="nav-item">
       <Link className="nav-link" aria-current="page" href="/browse">Browse</Link>
     </li>
     <li className="nav-item">
@@ -21,9 +21,9 @@ export default function Navigation() {
     </li>
     <li className="nav-item">
       <a data-action="click->navigation#navigate" className="nav-link" href="/posts">Blog</a>
-    </li>
+    </li> */}
     <li className="nav-item">
-      <a data-action="click->navigation#navigate" className="nav-link" href="/about">About</a>
+      <Link className="nav-link" aria-current="page" href="/about">About</Link>
     </li>
   </ul>
   )

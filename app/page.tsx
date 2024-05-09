@@ -29,7 +29,7 @@ export default function Home() {
               <a data-action="click->navigation#navigate" className="nav-link" href="/browse">Browse all shows</a>
             </div>
             
-            <List offset={ 0 } limit={ 6 } creator={ 'internal' } />
+            <List offset={ '0' } limit={ '6' } creator={ 'internal' } />
 
             <div className={`${ styles.footer } d-flex p-2`}>
               <div className="flex-grow-1">
@@ -38,7 +38,7 @@ export default function Home() {
               <a data-action="click->navigation#navigate" className="nav-link" href="/browse">Browse all shows</a>
             </div>
 
-            <List offset={ 0 } limit={ 6 } creator={ 'external' } />
+            <List offset={ '0' } limit={ '6' } creator={ 'external' } />
 
           </div>
         </div>

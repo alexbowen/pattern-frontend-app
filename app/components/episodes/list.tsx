@@ -2,13 +2,17 @@ import '../../globals.scss';
 
 import Item from './item'
 
-import { getData } from './data/pattern'
-
-export type Params = { limit: number, offset: number, q?: string, creator?: string }
+export type Params = { limit: string, offset: string, q?: string, creator?: string }
 
 export default async function List(params: Params) {
 
-  const data = await getData(params)
+  console.log('parama', params)
+
+  const response = await fetch(`http://localhost:3000/api/search/?${new URLSearchParams(params)}`, {
+    method: 'GET',
+  })
+
+  const data = await response.json()
 
   return (
     <div className="row episodes gx-2 gx-sm-4">

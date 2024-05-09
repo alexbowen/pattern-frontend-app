@@ -1,13 +1,28 @@
-import List from '../components/episodes/list'
+'use client';
 
-export default function Browse() {
+import List from '../../components/episodes/list'
+
+import {useSearchParams} from 'next/navigation'
+
+interface TestProps {
+  q: string,
+  offset?: string,
+  limit?: string,
+}
+
+export default function Browse({offset = '0', limit = '12', q = ''}: TestProps) {
+
+  const searchParams = useSearchParams()
+
+  const query = searchParams && searchParams.get("q") ? searchParams.get("q")! : q;
+
   return (
     <div className="container-fluid gx-4 gx-sm-5">
       <div className="row">
         <div className="col-12 col-md-9">
           <div className="list__heading row pt-0 pb-2">
             <div className="col-12">
-              <h3 className="mb-0" data-heading-target="title">Browse All Shows</h3>
+              <h3 className="mb-0" data-heading-target="title">Show Details</h3>
             </div>
             <div className="col-12">
               <span className="d-none" data-heading-target="preferences">
@@ -24,7 +39,7 @@ export default function Browse() {
           </form>
         </div>
       </div>
-      <List offset={ 0 } limit={ 12 } />
+      <List offset={ offset } limit={ limit } q={ query } />
     </div>
   )
 }
