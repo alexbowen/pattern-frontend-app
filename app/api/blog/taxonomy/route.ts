@@ -1,16 +1,11 @@
-import type { NextRequest, NextResponse } from 'next/server'
- 
-export async function GET(
-  req: NextRequest,
-  res: NextResponse
-) {
-  let url1 = 'https://hrr.xwi.mybluehost.me/wp-json/wp/v2/tags'
+export async function GET() {
+  const url1 = 'https://hrr.xwi.mybluehost.me/wp-json/wp/v2/tags'
 
   let response = await fetch(url1)
 
   const tagData = await response.json()
 
-  let url2 = 'https://hrr.xwi.mybluehost.me/wp-json/wp/v2/categories'
+  const url2 = 'https://hrr.xwi.mybluehost.me/wp-json/wp/v2/categories'
 
   response = await fetch(url2)
 

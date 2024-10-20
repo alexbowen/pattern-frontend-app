@@ -1,14 +1,11 @@
-import type { NextRequest, NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
  
 export async function GET(
-  req: NextRequest,
-  res: NextResponse
+  req: NextRequest
 ) {
   const searchParams = req.nextUrl.searchParams
 
   const url = `https://api.mixcloud.com/patternradio/${searchParams.get('id')}`
-
-  console.log('blog route', searchParams, url)
 
   const response = await fetch(url)
  

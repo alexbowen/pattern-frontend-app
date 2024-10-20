@@ -9,7 +9,7 @@ import Episodes from '../../components/episodes/dataSet'
 
 const getPosts = async (id) => {
 
-  const postsResponse = await fetch(`http://localhost:3000/api/blog/${id}`);
+  const postsResponse = await fetch(`http://localhost:3000/api/blog/${id}`, { cache: 'no-store' });
 
   return postsResponse.json()
 }

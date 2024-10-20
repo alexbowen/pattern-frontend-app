@@ -1,8 +1,7 @@
-import type { NextRequest, NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
  
 export async function GET(
-  req: NextRequest,
-  res: NextResponse
+  req: NextRequest
 ) {
   const searchParams = req.nextUrl.searchParams
 
@@ -14,14 +13,3 @@ export async function GET(
 
   return response;
 }
-
-
-// fetch(`${host}/api/shows/?${new URLSearchParams(req.query)}`)
-// .then((response) => response.json())
-// .then((episodes) => {
-//   let  data = {
-//     layout: 'partial/list/_layout.njk',
-//     data: { list: episodes }
-//   }
-//   res.render(`partial/episode/_${template}.njk`, data);
-// });
