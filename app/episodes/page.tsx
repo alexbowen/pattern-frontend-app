@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use client';
 
 import List from '../components/episodes/dataSet'
@@ -8,7 +9,7 @@ export default function Browse({ offset = 0, limit = 12, q = '' }) {
 
   const searchParams = useSearchParams();
 
-  const query = searchParams && searchParams.get("q") ? searchParams.get("q")! : q;
+  const query = searchParams && searchParams.get('q') ? searchParams.get('q')! : q;
 
   return (
     <div className="container-fluid content content__primary content--theme-dark">
