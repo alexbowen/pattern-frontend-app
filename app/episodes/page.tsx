@@ -10,7 +10,7 @@ interface SearchProps {
   limit?: number,
 }
 
-export default function Browse({ offset = 0, limit = 12, q = '' }: SearchProps) {
+export default function Browse({ offset = 0, limit = 12, q = '' }) {
 
   const searchParams = useSearchParams();
 

@@ -26,14 +26,14 @@ export default async function Browse({ params }: { params: { id: string } }) {
       <div className="container-fluid content content__primary content--theme-dark">
         <div className="content__container">
           <h1 className="font-dark">{item.title}</h1>
-          <h3>{ getCustomField(item.customFields, 'sub_title').value }</h3>
+          <h3>{ getCustomField(item.customFields, 'title:sub').value }</h3>
           <div className="mb-3 clearfix">
             <img src={item.thumbnail.thumbnail} className="me-3 mb-2 float-start" width="200" height="200" />
             <p dangerouslySetInnerHTML={{ __html: item.content }}></p>
           </div>
           <div className="d-flex">
 
-            {item.customFields.length ? <span className="flex-fill"><a className="btn btn-outline-light" href={getCustomField(item.customFields, 'link_href').value}>More details</a></span> : ''}
+            {item.customFields.length ? <span className="flex-fill"><a className="btn btn-outline-light" href={getCustomField(item.customFields, 'link:url').value}>{getCustomField(item.customFields, 'link:title').value}</a></span> : ''}
             <Tags tags={item.terms.filter(t => t.taxonomy === 'post_tag')} style={'button'} className="align-self-end" />
           </div>
         </div>
