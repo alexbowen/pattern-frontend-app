@@ -1,5 +1,3 @@
-import type { NextRequest, NextResponse } from 'next/server'
-
 import wordpress from 'wordpress'
 const client = wordpress.createClient({
 	url: "patternradio.com",
@@ -8,11 +6,11 @@ const client = wordpress.createClient({
 })
 
 export async function GET(
-  req: NextRequest,
-  res: NextResponse
+  req,
+  res
 ) {
   const data = await new Promise((resolve, reject) => {
-    client.getPost(res.params.id, function( error, post ) {
+    client.getPost(res.params.id, function( error, post ) { // eslint-disable-line
       if (error) {
         reject(error)
       }

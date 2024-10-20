@@ -2,7 +2,7 @@
 
 import tagStyles from './styles/tags.module.scss'
 
-export default function Tags({ tags, style }) {
+export default function Tags({ tags, style = 'button' }) {
 
   const Tag = (props) => {
     if (style === 'button') {

@@ -3,7 +3,10 @@
 import React, { createContext, useState, useEffect } from "react";
 
 const useTaxonomyState = () =>
-  useState([]);
+  useState({
+    tags: [],
+    categories: []
+  });
 
   // https://embed.radio.co/Tabs/b84cf70.html
 
@@ -33,6 +36,7 @@ const TaxonomyProvider = ({ children }: { children: React.ReactNode }) => {
         const response = await fetch(url);
 
         const data = await response.json();
+        console.log('taxonomy data', data)
         setTaxonomy(data);
         // setLoading(false);
       } catch (error) {

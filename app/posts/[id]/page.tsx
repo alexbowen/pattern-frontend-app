@@ -30,7 +30,7 @@ export default async function Browse({ params }: { params: { id: string } }) {
           <div className="d-flex">
 
             {item.customFields.length ? <span className="flex-fill"><a className="btn btn-outline-light" href={getCustomField(item.customFields, 'link:url').value}>{getCustomField(item.customFields, 'link:title').value}</a></span> : ''}
-            <Tags tags={item.terms.filter(t => t.taxonomy === 'post_tag')} style={'button'} className="align-self-end" />
+            <Tags tags={item.terms.filter(t => t.taxonomy === 'post_tag')} style={'button'} />
           </div>
         </div>
         <span className="content__background"></span>
@@ -38,7 +38,7 @@ export default async function Browse({ params }: { params: { id: string } }) {
 
       <div className="container-fluid content content--theme-light">
         <h2 className="font-dark">Related Reading</h2>
-        <Posts categories={[20]} per_page={2} exclude={item.id} template={'feature'} />
+        <Posts categories={[20]} per_page={2} exclude={item.id} template={'feature'} offset={0} episode_context={item.terms} tax_relation={'OR'} />
       </div>
 
       <div className="container-fluid content content--theme-dark">

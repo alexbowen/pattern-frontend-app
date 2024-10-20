@@ -16,18 +16,18 @@ export default function Tabs() {
 
   useEffect(() => {
     if (cart.active) {
-      localStorage.setItem('pattern-radio-style', cart.active);
-      setActive(parseInt(cart.active, 10))
+      // localStorage.setItem('pattern-radio-style', cart.active.toString());
+      setActive(cart.active)
     }
   }, [cart]);
 
   return (
     <ul className={ styles.tabs } role="tablist" data-tabs-active={ active ? true : false }>
       <li>
-    <Tab title="Electronic sounds" subTitle="House, Techno, Electronica, Dubstep, Broken Beat, Electro, Breaks, Downtempo" categoryId="21" active={ active === 21 } />
+    <Tab title="Electronic sounds" subTitle="House, Techno, Electronica, Dubstep, Broken Beat, Electro, Breaks, Downtempo" categoryId="21" />
     </li>
     <li>
-    <Tab title="Organic sounds" subTitle="Jazz, Funk, Soul, World, Latin, Afro, Disco, Dub, Reggae, Punk" categoryId="25" active={ active === 25 } />
+    <Tab title="Organic sounds" subTitle="Jazz, Funk, Soul, World, Latin, Afro, Disco, Dub, Reggae, Punk" categoryId="25" />
     </li>
   </ul>
   )

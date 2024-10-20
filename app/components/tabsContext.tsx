@@ -4,7 +4,7 @@ import React, { createContext, useState } from "react";
 
 const useTabsState = () =>
   useState({
-    active: parseInt(localStorage.getItem('pattern-radio-style'), 10) || null
+    active: ''
   });
 
   // https://embed.radio.co/Tabs/b84cf70.html

@@ -38,7 +38,7 @@ export default async function Browse({ params }: { params: { id: string } }) {
                 {/* <Image className="card-img-top" src={ episode.pictures.large } alt={ episode.name } width={300} height={300} /> */}
 
                 <div className={`${episodeStyles.playable__button} ${playable.playable__button}`}>
-                  <Play url={episode.key} />
+                  <Play url={episode.key} id={episode.id} />
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@ export default async function Browse({ params }: { params: { id: string } }) {
 
           <div className="d-md-flex mt-3">
             <h5 className="flex-fill font-dark">{` ${Math.floor(episode.audio_length * 1000 / 60000)} mins`}</h5>
-            <Tags tags={episode.tags} style={'button'} className="align-self-end" />
+            <Tags tags={episode.tags} style={'button'} />
           </div>
         </div>
         <span className="content__background"></span>
@@ -57,7 +57,7 @@ export default async function Browse({ params }: { params: { id: string } }) {
 
       <div className="container-fluid content content--theme-light">
         <h2 className="font-dark">Related Reading</h2>
-        <Posts heading_text={'Related reading'} episode_context={episode.tags} per_page={2} template={'feature'} />
+        <Posts heading_text={'Related reading'} episode_context={episode.tags} per_page={2} template={'feature'} exclude={0} offset={2} categories={[]} tax_relation={'OR'} />
       </div>
 
       <div className="container-fluid content content--theme-dark">

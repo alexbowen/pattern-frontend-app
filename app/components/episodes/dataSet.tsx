@@ -45,13 +45,13 @@ const categoryMap = {
 }
 
 const getTagIds = (episodeTags, taxonomyTags) => {
-  const tagIds = []
+  const tagIds:number[] = []
 
   episodeTags.forEach(tag => {
     const taxonomyItem = taxonomyTags.find(t => tag.name.toLowerCase() === t.name.toLowerCase());
     
     if (taxonomyItem) {
-      tagIds.push(taxonomyItem.name)
+      tagIds.push(taxonomyItem.name) // eslint-disable-line
     }
   })
 
@@ -81,12 +81,12 @@ export default function DataSet(params: ParamsInt) {
     // console.log('tagIds', tagIds)
   }
 
-  params2.filters = filters
+  const params3 = { ...params2, filters }
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getEpisodes(params2)
+        const data = await getEpisodes(params3)
         setListItems(data.items);
         // setLoading(false);
       } catch (error) {
@@ -102,7 +102,7 @@ export default function DataSet(params: ParamsInt) {
   return (
     <div>
       {params.pagination_control && <Pagination /> }
-        <ListComponent items={ listItems } Template={ Item } heading_text={ params.heading_text } />
+        <ListComponent items={ listItems } Template={ Item } />
         {params.pagination_control && <Pagination /> }
     </div>
     

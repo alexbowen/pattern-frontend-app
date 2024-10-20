@@ -1,8 +1,6 @@
-import type { NextRequest, NextResponse } from 'next/server'
- 
 export async function GET(
-  req: NextRequest,
-  res: NextResponse
+  req,
+  res
 ) {
   const url = `https://api.mixcloud.com/patternradio/${res.params.id}`
 
@@ -14,3 +12,5 @@ export async function GET(
 
   return response;
 }
+
+

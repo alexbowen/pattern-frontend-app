@@ -1,9 +1,12 @@
 import PostsContent from '../components/posts/dataSet'
 
-export default function Posts({offset = 0, limit = 2}) {
+
+
+export default function Posts() {
+
   return (
     <div className="container-fluid content content--theme-dark">
-      <PostsContent offset={ offset } per_page={ limit } pagination_control={ true } />
+      <PostsContent offset={ 0 } per_page={ 6 } pagination_control={ true } exclude={0} episode_context={[]} categories={[]} tax_relation={'OR'} />
     </div>
   )
 }
