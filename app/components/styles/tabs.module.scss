@@ -1,0 +1,71 @@
+@import '../../styles/branding.scss';
+
+.tabs {
+  display: flex;
+  list-style-type: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+
+  li {
+
+    display: flex;
+    flex-grow: 1;
+    border-bottom: 1px solid $brand-color-dark;
+    border-top: 1px solid $brand-color-dark;
+
+    >button {
+      cursor: pointer;
+
+      &:hover {
+        background-color: $brand-color-medium;
+
+        .tabsDetail {
+          color: $brand-color-dark;
+        }
+
+        .tabsTitle {
+          color: $brand-color-black;
+        }
+      }
+
+      border: 0;
+      width: 100%;
+      text-align: left;
+      padding: 5px 10px;
+
+      .tabsDetail {
+        color: $brand-color-medium;
+      }
+
+      .tabsTitle {
+        color: $brand-color-white;
+      }
+
+      background-color: $brand-color-black;
+    }
+
+
+    .tabsDetail {
+      display: block;
+      font-size: 0.8em;
+    }
+  }
+}
+
+.tabs[data-tabs-active=true] {
+  .tabDeselected {
+    flex-grow: unset;
+  }
+
+  .tabSelected {
+    .tabsDetail {
+      color: $brand-color-medium;
+    }
+
+    .tabsTitle {
+      color: $brand-color-primary;
+    }
+
+    background-color: $brand-color-dark;
+  }
+}

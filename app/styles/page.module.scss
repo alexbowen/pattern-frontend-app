@@ -1,31 +1,3 @@
 @import './branding';
 @import './bootstrap';
 
-.row {
-
-  &.primary {
-    background: url('/images/brand/patterns_01_tile.png') repeat;
-
-    h1 {
-      color:$brand-color-secondary;
-    }
-
-    h3 {
-      color: $brand-color-secondary;
-      // @include font-size(2rem);
-    }
-
-    .content {
-      background-color: $brand-color-white;
-
-    }
-  }
-
-  &.secondary{
-    background-color: $brand-color-medium;
-
-    p, a {
-      // @include font-size(0.8rem);
-    }
-  }
-}

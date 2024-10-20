@@ -7,6 +7,7 @@ type Cart = { url: string }
 const usePlayerState = () =>
   useState({
     url: '',
+    id: 'x',
   });
 
   // https://embed.radio.co/player/b84cf70.html

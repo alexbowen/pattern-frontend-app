@@ -1,42 +1,28 @@
 'use client';
 
-import List from '../components/episodes/list'
+import List from '../components/episodes/dataSet'
 
-import {useSearchParams} from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 
 interface SearchProps {
   q: string,
-  offset?: string,
-  limit?: string,
+  offset?: number,
+  limit?: number,
 }
 
-export default function Browse({offset = '0', limit = '12', q = ''}: SearchProps) {
+export default function Browse({ offset = 0, limit = 12, q = '' }: SearchProps) {
 
   const searchParams = useSearchParams();
 
   const query = searchParams && searchParams.get("q") ? searchParams.get("q")! : q;
 
   return (
-    <div className="container-fluid gx-4 gx-sm-5">
-      <div className="row">
-        <div className="col-12 col-md-9">
-          <div className="list__heading row pt-0 pb-2">
-            <div className="col-12">
-              <h3 className="mb-0" data-heading-target="title">{ query ? <span>Search Results for '{ query }'</span> : <span>Browse Shows</span> }</h3>
-            </div>
-            <div className="col-12">
-              <span className="d-none" data-heading-target="preferences">
-                (Preferences Applied)
-                <button className="reset" data-heading-target="reset" data-action="click->episodes#clearFilters">reset</button>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="col-12 col-md-3 mb-3 mb-md-0">
-          Pagination
-        </div>
+    <div className="container-fluid content content__primary content--theme-dark">
+      <div className="content__container">
+        <h1 className="font-dark" data-heading-target="title">{query ? `Search Results for '${query}'` : 'Browse Shows'}</h1>
+        <List offset={offset} limit={limit} q={query} pagination_control={ true } />
       </div>
-      <List offset={ offset } limit={ limit } q={ query } />
+      <span className="content__background"></span>
     </div>
   )
 }

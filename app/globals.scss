@@ -3,23 +3,10 @@
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 body {
-  color: $brand-color-dark;
-  background-color: $brand-color-white;
+  // color: $brand-color-black;
+  background-color: $brand-color-black;
 }
 
-h1 {
-  @include font-size(2.4rem);
-}
 
-h2 {
-  text-transform: capitalize;
-  margin-bottom: 1rem;
-}
 
-h3 {
-  @include font-size(2.4rem);
 
-  span {
-    @include font-size(1.4rem);
-  }
-}

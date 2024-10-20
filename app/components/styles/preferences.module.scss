@@ -33,7 +33,7 @@
   }
 
   &-header {
-    background-color: $brand-color-dark;
+    background-color: $brand-color-black;
 
     .nav-link {
       text-transform: capitalize;
@@ -41,7 +41,7 @@
 
       &:hover:not(.active) {
         background-color: $brand-color-medium;
-        color: $brand-color-dark;
+        color: $brand-color-black;
       }
     }
 
@@ -59,7 +59,7 @@
       cursor: pointer;
 
       &:hover {
-        background-color: $brand-color-dark;
+        background-color: $brand-color-black;
         color: $brand-color-light;
       }
     }
@@ -73,7 +73,7 @@
   .selected {
     button {
       background-color: $brand-color-primary;
-      color: $brand-color-dark;
+      color: $brand-color-black;
       border: none;
       text-transform: capitalize;
     }

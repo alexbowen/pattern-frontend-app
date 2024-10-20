@@ -12,6 +12,12 @@ module.exports = {
         port: '',
         pathname: '/unsafe/',
       },
+      {
+        protocol: 'https',
+        hostname: 'patternradio.com',
+        port: '',
+        pathname: '/unsafe/',
+      },
     ],
   },
 }

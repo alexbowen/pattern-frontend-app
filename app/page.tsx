@@ -1,47 +1,57 @@
-import styles from './styles/page.module.scss'
-import List from './components/episodes/list'
 
-export default function Home() {
+import { Suspense } from 'react'
+
+import Episodes from './components/episodes/dataSet'
+import Posts from './components/posts/dataSet'
+import Tabs from './components/tabs'
+
+function LoadingFallback() {
+  return <p>loading</p>
+}
+
+export default async function Home() {
   return (
-
-    <div className="container-fluid">
-      <div className={`${ styles.row } ${ styles.primary } row mb-3 mb-md-0`}>
-
-
-          <h1>Musical selections and discovery for enlightened listening</h1>
-
-
-          <div className={`col-12 col-md-4 my-4`}>
-          <div className={`${ styles.content }`}>
-            <p>stream ui</p>
+    <div>
+      <div className="container-fluid">
+        <div className={`row mb-1`}>
+          <Tabs />
+          {/* <div className="col-12 p-3">
+            <div>
+              <p>stream ui</p>
             </div>
-          </div>
-
-          <div className={`col-12 col-md-4 my-4`}>
-          <div className={`${ styles.content }`}>
-            news
-          </div>
-          </div>
-
-          <div className={`col-12 col-md-4 my-4`}>
-          <div className={`${ styles.content }`}>
-            shows
-          </div>
-          </div>
-
-  
-
+          </div> */}
+        </div>
       </div>
 
+      <div className="container-fluid content content__primary content--theme-dark">
+        <div className="content__container">
+          <h2 className="font-medium">New On Pattern Radio</h2>
+          <Episodes offset={0} limit={6} creator={'internal'} tabs_context={true} />
+        </div>
+        <span className="content__background"></span>
+      </div>
 
-<h2>New On Pattern Radio</h2>
-      <List offset={ '0' } limit={ '6' } creator={ 'internal' } />
+      <div className="container-fluid content content--theme-light">
+        <Suspense fallback={<LoadingFallback />}>
+          <div className="row">
 
-      <h2>New Recommended Shows</h2>
-            <List offset={ '0' } limit={ '6' } creator={ 'external' } />
+            <div className="col-12 col-md-6">
+              <h3 className="font-dark">Reviews & Releases</h3>
+              <Posts offset={0} per_page={2} exclude={0} categories={[39]} tax_relation={'AND'} tabs_context={true} />
+            </div>
 
+            <div className="col-12 col-md-6">
+              <h3 className="font-dark">What's On</h3>
+              <Posts offset={0} per_page={2} exclude={0} categories={[33]} tax_relation={'AND'} tabs_context={true} />
+            </div>
+          </div>
+        </Suspense>
+      </div>
 
-
+      <div className="container-fluid content content--theme-dark">
+        <h2 className="font-medium">New Recommended Shows</h2>
+        <Episodes offset={0} limit={6} creator={'external'} tabs_context={true} />
+      </div>
     </div>
   )
 }

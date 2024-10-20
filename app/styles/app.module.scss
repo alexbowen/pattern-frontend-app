@@ -1,34 +1,31 @@
 @import './branding';
 @import './bootstrap';
 
+
+
+
 .header {
-  background-color: $brand-color-dark;
+  background-color: $brand-color-black;
   color: $brand-color-medium;
   position: fixed;
   width: 100%;
   z-index: 1000;
   top: 0;
+  height: 88px;
 
-  h2 {
-    color: $brand-color-medium;
-    line-height: 3.5rem;
-  }
 
-  h3 {
-    font-size: calc(0.6vw + 1vh);
-  }
 
   .header__dropdown {
-    background-color: $brand-color-dark;
+    background-color: $brand-color-black;
     width: 100%;
     z-index: 500;
   }
 
   .navigation {
-    background-color: $brand-color-medium;
+
     opacity: 1;
-    background-size: 10px 10px;
-    background-image: repeating-linear-gradient(45deg, #4A5359 0, #4A5359 1px, $brand-color-dark 0, $brand-color-dark 50%);
+
+    background-color: $brand-color-black !important;
     padding: 0;
 
     .navbar-toggler {
@@ -46,18 +43,8 @@
 }
 
 .main {
-  margin-top: 5rem;
-  padding-bottom: 8rem;
+  // background-color: $brand-color-black;
+  margin-top: 100px;
   position: relative;
   min-height: 100vh;
-
-  .nav-link {
-    text-decoration: underline;
-  }
-
-  .carousel {
-    .carousel-control-next {
-      width: auto;
-    }
-  }
 }

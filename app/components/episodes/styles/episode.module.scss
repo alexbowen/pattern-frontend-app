@@ -1,15 +1,17 @@
-@import '../app/styles/branding';
+@import '../../../styles/branding.scss';
 
 .episode {
   &__header {
+
     position: relative;
-    display: inline-block;
-    border: 6px solid $brand-color-light;
+
+    padding-bottom: 5px;
+    // display: inline-block;
 
     &:hover {
       .playable {
         &__button {
-        display:block;
+          display: block;
         }
       }
 
@@ -18,11 +20,16 @@
       }
     }
 
+    h3,
+    h4 {
+      color: $brand-color-light;
+    }
+
     .playable {
-      
+      position: absolute;
       &__button {
         width: 60px;
-        display:none;
+        display: none;
         margin: auto;
         left: 0;
         right: 0;
@@ -33,25 +40,38 @@
     }
   }
 
-    .statistics {
-      background-color: $brand-color-light;
-      font-size: 0.9rem;
+  &__title {
+    border-bottom: 1px solid $brand-color-dark;
+    margin-bottom: 10px;
+    cursor: pointer;
 
-      &__count {
-        padding-left: 1.3rem;
-        background-position: left;
-        background-repeat: no-repeat;
-      }
-
-      &__likes {
-        background-image: url(/images/icons/heart.svg);
-      }
-
-      &__reposts {
-        background-image: url(/images/icons/repost.svg);
-      }
+    &:hover{
+      color: $brand-color-grey;
     }
-  
+  }
+
+  .statistics {
+    border-bottom: 1px solid $brand-color-dark;
+    margin-bottom: 10px;
+    background-color: transparent;
+    font-size: 0.9rem;
+    color: inherit;
+
+    &__count {
+      padding-left: 1.3rem;
+      background-position: left;
+      background-repeat: no-repeat;
+    }
+
+    &__likes {
+      background-image: url(/images/icons/heart.svg);
+    }
+
+    &__reposts {
+      background-image: url(/images/icons/repost.svg);
+    }
+  }
+
 
   p {
     padding: 0;
@@ -63,14 +83,11 @@
     text-wrap: wrap;
   }
 
-  .card-body {
-    padding: 0.5rem;
-    width: 100%;
+  .nav-link {
+
   }
 
-  .nav-link {
-    color: $brand-color-dark;
-  }
+
 
 
 }

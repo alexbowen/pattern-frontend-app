@@ -1,0 +1,42 @@
+@import '../../styles/branding.scss';
+
+.pagination {
+  color: $brand-color-light;
+  text-align: right;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+  
+    li {
+      border: 1px solid $brand-color-medium;
+      border-radius: 2em;
+      width: 2em;
+      height: 2em;
+      display: inline-flex;
+      margin: 0 5px;
+
+      a {
+        align-self: center;
+        margin: 0 auto;
+        text-decoration: none;
+        color: $brand-color-light;
+        cursor: pointer;
+
+        &:hover {
+          color: black;
+        }
+      }
+
+      &.page {
+        margin: 0 10px;
+        background-color: $brand-color-dark;
+      }
+
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+
+}

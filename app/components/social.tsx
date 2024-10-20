@@ -4,7 +4,7 @@ import '../globals.scss';
 
 export default function SocialToolbar() {
   return (
-    <div className={`ms-3 d-none d-md-block ${ social.toolbar }`}>
+    <div className={`${ social.toolbar }`}>
       <ul className="list-group list-group-horizontal d-flex align-items-baseline">
         <li className="list-group-item">
           <a href="https://www.facebook.com/groups/patternradio" target="_blank">

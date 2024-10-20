@@ -1,0 +1,21 @@
+@import '../../styles/branding';
+@import '../../styles/bootstrap';
+
+.tags {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    cursor: pointer;
+    display: inline;
+    text-transform: capitalize;
+
+    span {
+      font-size: 0.6rem;
+      margin-right: 0;
+      border: none;
+      color: $brand-color-dark;
+      background-color: $brand-color-grey;
+    }
+  }
+}

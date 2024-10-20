@@ -1,7 +1,15 @@
-export default function About() {
+import PostsContent from '../components/posts/dataSet'
+
+interface SearchProps {
+  q: string,
+  offset?: string,
+  limit?: string,
+}
+
+export default async function Posts({offset = '0', limit = '2', q = ''}: SearchProps) {
   return (
-    <div className="container-fluid gx-4 gx-sm-5">
-      <h3>Blog</h3>
+    <div className="container-fluid content content--theme-dark">
+      <PostsContent offset={ 0 } per_page={ 25 } pagination_control={ true } />
     </div>
   )
 }
