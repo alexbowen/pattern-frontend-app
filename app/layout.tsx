@@ -12,10 +12,7 @@ import styles from './styles/app.module.scss';
 import SocialToolbar from './components/social'
 import Footer from './components/footer'
 import Player from './components/player'
-import Navigation from './components/navigation'
 import Search from './components/search'
-import Preferences from './components/preferences'
-
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.patternradio.net'),

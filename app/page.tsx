@@ -41,7 +41,7 @@ export default async function Home() {
             </div>
 
             <div className="col-12 col-md-6">
-              <h3 className="font-dark">What's On</h3>
+              <h3 className="font-dark">Whats On</h3>
               <Posts offset={0} per_page={2} exclude={0} categories={[33]} tax_relation={'AND'} tabs_context={true} />
             </div>
           </div>

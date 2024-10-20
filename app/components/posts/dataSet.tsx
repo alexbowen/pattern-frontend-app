@@ -1,9 +1,8 @@
 'use client'
 
 import '../../globals.scss'
-import styles from '../styles/list.module.scss';
+import styles from '../styles/list.module.scss'
 
-import List from '../list'
 import Feature from './feature'
 import Item from './item'
 import getPosts from './actions'
@@ -29,7 +28,6 @@ const ParamsDefaults: ParamsInt = {
 }
 
 import { useTaxonomy } from '../taxonomyContext'
-import Tags from '../tags';
 
 const templateMapping = {
   item: Item,
@@ -37,10 +35,10 @@ const templateMapping = {
 }
 
 const getTagIds = (episodeTags, taxonomyTags) => {
-  let tagIds = []
+  const tagIds = []
 
   episodeTags.forEach(tag => {
-    let taxonomyItem = taxonomyTags.find(t => tag.name.toLowerCase() === t.name.toLowerCase())
+    const taxonomyItem = taxonomyTags.find(t => tag.name.toLowerCase() === t.name.toLowerCase())
 
     if (taxonomyItem) {
       tagIds.push(taxonomyItem.id)
@@ -52,7 +50,7 @@ const getTagIds = (episodeTags, taxonomyTags) => {
 
 export default function DataSet(params: ParamsInt) {
 
-  let completeParams = { ...ParamsDefaults, ...params }
+  const completeParams = { ...ParamsDefaults, ...params }
 
   const [items, setItems] = useState([]);
 
@@ -91,7 +89,7 @@ export default function DataSet(params: ParamsInt) {
         setItems(data)
         // setLoading(false);
       } catch (error) {
-        console.log('error client url', url)
+        console.log('error client url', error)
         // setError(error);
         // setLoading(false);
       }

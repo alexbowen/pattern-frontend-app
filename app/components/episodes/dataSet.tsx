@@ -45,10 +45,10 @@ const categoryMap = {
 }
 
 const getTagIds = (episodeTags, taxonomyTags) => {
-  let tagIds = []
+  const tagIds = []
 
   episodeTags.forEach(tag => {
-    let taxonomyItem = taxonomyTags.find(t => tag.name.toLowerCase() === t.name.toLowerCase());
+    const taxonomyItem = taxonomyTags.find(t => tag.name.toLowerCase() === t.name.toLowerCase());
     
     if (taxonomyItem) {
       tagIds.push(taxonomyItem.name)
@@ -90,6 +90,7 @@ export default function DataSet(params: ParamsInt) {
         setListItems(data.items);
         // setLoading(false);
       } catch (error) {
+        console.log('error episdoes data set', error)
         // setError(error);
         // setLoading(false);
       }

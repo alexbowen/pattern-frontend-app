@@ -2,8 +2,6 @@
 
 import React, { createContext, useState } from "react";
 
-type Cart = { url: string }
-
 const useTabsState = () =>
   useState({
     active: parseInt(localStorage.getItem('pattern-radio-style'), 10) || null

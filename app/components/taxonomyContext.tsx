@@ -2,8 +2,6 @@
 
 import React, { createContext, useState, useEffect } from "react";
 
-type Cart = { url: string }
-
 const useTaxonomyState = () =>
   useState([]);
 
@@ -16,7 +14,7 @@ export const TaxonomyContext = createContext<ReturnType<
 export const useTaxonomy = () => {
   const cart = React.useContext(TaxonomyContext);
   if (!cart) {
-    throw new Error("useTaxonomy must be used within a CategoriesProvider");
+    throw new Error("useTaxonomy must be used within a TaxonomyProvider");
   }
   return cart;
 };
@@ -29,7 +27,7 @@ const TaxonomyProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const getTaxonomy = async () => {
-      let url = `http://localhost:3000/api/blog/taxonomy`
+      const url = `http://localhost:3000/api/blog/taxonomy`
 
       try {
         const response = await fetch(url);
@@ -38,7 +36,7 @@ const TaxonomyProvider = ({ children }: { children: React.ReactNode }) => {
         setTaxonomy(data);
         // setLoading(false);
       } catch (error) {
-        console.log('error client url', url)
+        console.log('error client url', error)
         // setError(error);
         // setLoading(false);
       }

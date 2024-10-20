@@ -23,7 +23,7 @@ export default function Search() {
     if (!inputValue) return router.push("/episodes")
   }
 
-  const handleKeyPress = (e: { key: any }) => {
+  const handleKeyPress = (e: { key }) => {
       if (e.key === 'Enter') return handleSearch(e)
   }
 

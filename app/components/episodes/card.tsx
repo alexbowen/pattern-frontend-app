@@ -1,6 +1,4 @@
 'use client'
-// import Link from 'next/link'
-// import Image from 'next/image'
 
 import '../../globals.scss';
 import episodeStyles from './styles/episode.module.scss'
@@ -10,22 +8,7 @@ import Play from './play'
 
 import { usePlayer } from '../playerContext';
 
-import Tags from '../tags'
-import Link from 'next/link'
-
 const timeToMinutes = (d) => Math.floor(d * 1000 / 60000)
-
-
-const showData = (name) => {
-  const parts = name.split('-');
-  return {
-    title: parts[0],
-    host: parts[1],
-    detail: parts[2],
-  }
-}
-
-const showTitleId = (title) => title.trim().toLowerCase().replace(/ /g, '-')
 
 export default function Item({ item }) {
 

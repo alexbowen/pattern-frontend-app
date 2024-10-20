@@ -5,9 +5,7 @@ export async function GET(
 ) {
   const searchParams = req.nextUrl.searchParams
 
-  const url = `https://api.mixcloud.com/patternradio/${searchParams.get('id')}`
-
-  const response = await fetch(url)
+  const response = await fetch(`http://localhost:5000/api/shows?${new URLSearchParams(searchParams)}`)
  
   if (!response.ok) {
     throw new Error('Failed to fetch data')

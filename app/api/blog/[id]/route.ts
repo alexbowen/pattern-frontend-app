@@ -1,4 +1,4 @@
-import type { NextResponse } from 'next/server'
+import type { NextRequest, NextResponse } from 'next/server'
 
 import wordpress from 'wordpress'
 const client = wordpress.createClient({
@@ -8,6 +8,7 @@ const client = wordpress.createClient({
 })
 
 export async function GET(
+  req: NextRequest,
   res: NextResponse
 ) {
   const data = await new Promise((resolve, reject) => {

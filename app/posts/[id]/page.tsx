@@ -1,7 +1,3 @@
-import { useSearchParams } from 'next/navigation'
-
-
-import Item from '../../components/posts/item'
 import Tags from '../../components/tags'
 
 import Posts from '../../components/posts/dataSet'

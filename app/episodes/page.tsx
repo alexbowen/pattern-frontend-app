@@ -4,12 +4,6 @@ import List from '../components/episodes/dataSet'
 
 import { useSearchParams } from 'next/navigation'
 
-interface SearchProps {
-  q: string,
-  offset?: number,
-  limit?: number,
-}
-
 export default function Browse({ offset = 0, limit = 12, q = '' }) {
 
   const searchParams = useSearchParams();

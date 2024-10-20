@@ -1,4 +1,3 @@
-import Card from '../../components/episodes/card'
 import Tags from '../../components/tags'
 import Play from '../../components/episodes/play'
 
@@ -9,7 +8,7 @@ import episodeStyles from '../../components/episodes/styles/episode.module.scss'
 import playable from '../../components/episodes/styles/playable.module.scss'
 
 const getEpisode = async (id) => {
-  const episodeResponse = await fetch(`http://localhost:3000/api/episode?id=${id}`, {
+  const episodeResponse = await fetch(`http://localhost:3000/api/episode/${id}`, {
     method: 'GET',
   })
 

@@ -2,7 +2,7 @@
 
 import { usePlayer } from "../playerContext";
 
-export default function Play(props: any) {
+export default function Play({ props }) {
 
   const [, setPlayer] = usePlayer();
 

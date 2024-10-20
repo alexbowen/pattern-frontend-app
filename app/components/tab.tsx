@@ -3,7 +3,7 @@
 import { useTabs } from "./tabsContext";
 import styles from './styles/tabs.module.scss';
 
-export default function Tab(props: any) {
+export default function Tab(props) {
 
   const [, setTabs] = useTabs();
 

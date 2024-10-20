@@ -1,8 +1,6 @@
 "use client";
 
-import React, { createContext, useState, useEffect } from "react";
-
-type Cart = { url: string }
+import React, { createContext, useState, useEffect } from "react"
 
 const useCategoriesState = () =>
   useState({
@@ -33,22 +31,19 @@ export const useCategories = () => {
 const CategoriesProvider = ({ children }: { children: React.ReactNode }) => {
   const [categories, setCategories] = useCategoriesState();
 
-  // console.log('category provider')
-
-
   useEffect(() => {
     const getCategories = async () => {
-      let url = `http://localhost:3000/api/blog/taxonomy`
+      const url = `http://localhost:3000/api/blog/taxonomy`
 
       try {
-        const response = await fetch(url);
+        const response = await fetch(url)
 
         const data = await response.json();
         // console.log('categories data', data)
         setCategories({ items: data });
         // setLoading(false);
       } catch (error) {
-        console.log('error client url', url)
+        console.log('error client url', error)
         // setError(error);
         // setLoading(false);
       }

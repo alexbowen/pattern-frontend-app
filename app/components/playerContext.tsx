@@ -1,14 +1,12 @@
 "use client";
 
-import React, { createContext, useState } from "react";
-
-type Cart = { url: string }
+import React, { createContext, useState } from "react"
 
 const usePlayerState = () =>
   useState({
     url: '',
-    id: 'x',
-  });
+    id: '',
+  })
 
   // https://embed.radio.co/player/b84cf70.html
 
