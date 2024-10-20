@@ -5,7 +5,7 @@ import Episodes from '../../components/episodes/dataSet'
 
 const getPosts = async (id) => {
 
-  const postsResponse = await fetch(`http://localhost:3000/api/blog/${id}`, { cache: 'no-store' });
+  const postsResponse = await fetch(`https://pattern-frontend-app-a4f7fa601daf.herokuapp.com/api/blog/${id}`, { cache: 'no-store' });
 
   return postsResponse.json()
 }

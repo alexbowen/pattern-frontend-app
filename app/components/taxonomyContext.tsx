@@ -30,7 +30,7 @@ const TaxonomyProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const getTaxonomy = async () => {
-      const url = `http://localhost:3000/api/blog/taxonomy`
+      const url = `https://pattern-frontend-app-a4f7fa601daf.herokuapp.com/api/blog/taxonomy`
 
       try {
         const response = await fetch(url);

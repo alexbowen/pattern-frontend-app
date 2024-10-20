@@ -64,7 +64,7 @@ export default function DataSet(params: ParamsInt) {
   useEffect(() => {
     const fetchData = async () => {
 
-      const url = new URL(`http://localhost:3000/api/blog`)
+      const url = new URL(`https://pattern-frontend-app-a4f7fa601daf.herokuapp.com/api/blog`)
       const searchParams = url.searchParams
 
       let allCategories

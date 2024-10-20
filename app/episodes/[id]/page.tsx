@@ -8,7 +8,7 @@ import episodeStyles from '../../components/episodes/styles/episode.module.scss'
 import playable from '../../components/episodes/styles/playable.module.scss'
 
 const getEpisode = async (id) => {
-  const episodeResponse = await fetch(`http://localhost:3000/api/episode/${id}`, {
+  const episodeResponse = await fetch(`https://pattern-frontend-app-a4f7fa601daf.herokuapp.com/api/episode/${id}`, {
     method: 'GET',
   })
 

@@ -2,7 +2,7 @@
 
 const getEpisodes = async(params) => {
 
-  const url = `http://localhost:3000/api/episode/?${new URLSearchParams(params)}`
+  const url = `https://pattern-frontend-app-a4f7fa601daf.herokuapp.com/api/episode/?${new URLSearchParams(params)}`
 
   console.log('url', url)
 
