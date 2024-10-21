@@ -30,7 +30,7 @@ export default async function Browse({ params }: { params: { id: string } }) {
           <div className="d-flex">
 
             {item.customFields.length ? <span className="flex-fill"><a className="btn btn-outline-light" href={getCustomField(item.customFields, 'link:url').value}>{getCustomField(item.customFields, 'link:title').value}</a></span> : ''}
-            <Tags tags={item.terms.filter(t => t.taxonomy === 'post_tag')} style={'button'} />
+            <Tags tags={item.terms.filter(t => t.taxonomy === 'post_tag')} />
           </div>
         </div>
         <span className="content__background"></span>

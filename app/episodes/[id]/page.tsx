@@ -49,7 +49,7 @@ export default async function Browse({ params }: { params: { id: string } }) {
 
           <div className="d-md-flex mt-3">
             <h5 className="flex-fill font-dark">{` ${Math.floor(episode.audio_length * 1000 / 60000)} mins`}</h5>
-            <Tags tags={episode.tags} style={'button'} />
+            <Tags tags={episode.tags} />
           </div>
         </div>
         <span className="content__background"></span>
