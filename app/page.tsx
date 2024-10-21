@@ -14,19 +14,20 @@ export default async function Home() {
     <div>
       <div className="container-fluid">
         <div className={`row mb-1`}>
+        <div className="col-12 p-3 content content--theme-light">
+
+<p>stream ui</p>
+
+</div>
           <Tabs />
-          {/* <div className="col-12 p-3">
-            <div>
-              <p>stream ui</p>
-            </div>
-          </div> */}
+
         </div>
       </div>
 
       <div className="container-fluid content content__primary content--theme-dark">
         <div className="content__container">
           <h2 className="font-medium">New On Pattern Radio</h2>
-          <Episodes offset={0} limit={6} creator={'internal'} tabs_context={true} />
+          <Episodes offset={0} limit={ 6 } creator={'internal'} tabs_context={true} />
         </div>
         <span className="content__background"></span>
       </div>

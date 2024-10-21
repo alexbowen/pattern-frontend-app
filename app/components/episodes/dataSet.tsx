@@ -42,9 +42,9 @@ const categoryMap = {
 
 const getTagIds = (episodeTags, taxonomyTags) => {
   const tagIds:number[] = []
-
+console.log('episodeTags', episodeTags)
   episodeTags.forEach(tag => {
-    const taxonomyItem = taxonomyTags.find(t => tag.name.toLowerCase() === t.name.toLowerCase());
+    const taxonomyItem = taxonomyTags.find(t => tag.name.toLowerCase().includes(t.name.toLowerCase()));
     
     if (taxonomyItem) {
       tagIds.push(taxonomyItem.name) // eslint-disable-line
@@ -64,13 +64,15 @@ export default function DataSet(params: ParamsInt) {
   const params2 = structuredClone(params)
 
   let filters = ''
-
+  console.log('tabs context', params, tabs, categoryMap[`category${tabs.active}`])
   if (params.tabs_context && categoryMap[`category${tabs.active}`]) {
-    filters = categoryMap[`category${tabs.active}`].join(',')
+    filters = categoryMap[`category${tabs.active}`]
+    console.log('filters', filters)
   }
-
+// console.log('episode context', params, taxonomy.tags)
   if (params.episode_context && params.episode_context.length && taxonomy.tags) {
     const tagIds = getTagIds(params.episode_context, taxonomy.tags)
+    console.log('tagIds', tagIds)
     filters = tagIds.join(',')
   }
 

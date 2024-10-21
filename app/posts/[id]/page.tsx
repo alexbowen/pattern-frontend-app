@@ -5,6 +5,8 @@ import Episodes from '../../components/episodes/dataSet'
 
 const getPosts = async (id) => {
 
+  console.log(process.env)
+
   const postsResponse = await fetch(`https://pattern-frontend-app-a4f7fa601daf.herokuapp.com/api/blog/${id}`, { cache: 'no-store' });
 
   return postsResponse.json()
@@ -28,7 +30,6 @@ export default async function Browse({ params }: { params: { id: string } }) {
             <p dangerouslySetInnerHTML={{ __html: item.content }}></p>
           </div>
           <div className="d-flex">
-
             {item.customFields.length ? <span className="flex-fill"><a className="btn btn-outline-light" href={getCustomField(item.customFields, 'link:url').value}>{getCustomField(item.customFields, 'link:title').value}</a></span> : ''}
             <Tags tags={item.terms.filter(t => t.taxonomy === 'post_tag')} />
           </div>
@@ -38,7 +39,7 @@ export default async function Browse({ params }: { params: { id: string } }) {
 
       <div className="container-fluid content content--theme-light">
         <h2 className="font-dark">Related Reading</h2>
-        <Posts categories={[20]} per_page={2} exclude={item.id} template={'feature'} offset={0} episode_context={item.terms} tax_relation={'OR'} />
+        <Posts categories={[20]} per_page={2} exclude={ item.id } template={'feature'} offset={0} episode_context={item.terms} tax_relation={'OR'} />
       </div>
 
       <div className="container-fluid content content--theme-dark">

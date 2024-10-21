@@ -29,21 +29,20 @@ export default async function Browse({ params }: { params: { id: string } }) {
             <div className={episodeStyles.episode}>
               <div className={episodeStyles.episode__header}>
                 <img
-                  srcSet={`${episode.pictures.medium} 100w, ${episode.pictures.large} 300w`}
-                  sizes="(max-width: 1200px) 100px, 300px"
+                  srcSet={`${episode.pictures.medium} 200w, ${episode.pictures.large} 300w`}
+                  sizes="(max-width: 1200px) 200px, 300px"
                   src={episode.pictures.large}
                   alt={episode.name}
-                  className=" float-start me-3" />
+                  className=" float-start float-md-none" />
 
                 {/* <Image className="card-img-top" src={ episode.pictures.large } alt={ episode.name } width={300} height={300} /> */}
-
                 <div className={`${episodeStyles.playable__button} ${playable.playable__button}`}>
-                  <Play url={episode.key} id={episode.id} />
-                </div>
+                <Play url={episode.key} id={episode.id} />
+            </div>
               </div>
             </div>
 
-            <p>{episode.description}</p>
+            <p className="ms-3">{episode.description}</p>
 
           </div>
 
@@ -57,7 +56,7 @@ export default async function Browse({ params }: { params: { id: string } }) {
 
       <div className="container-fluid content content--theme-light">
         <h2 className="font-dark">Related Reading</h2>
-        <Posts heading_text={'Related reading'} episode_context={episode.tags} per_page={2} template={'feature'} exclude={0} offset={2} categories={[]} tax_relation={'OR'} />
+        <Posts heading_text={'Related reading'} episode_context={episode.tags} per_page={2} template={'feature'} exclude={episode.id} offset={2} categories={[]} tax_relation={'OR'} />
       </div>
 
       <div className="container-fluid content content--theme-dark">
