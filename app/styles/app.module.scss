@@ -1,9 +1,6 @@
 @import './branding';
 @import './bootstrap';
 
-
-
-
 .header {
   background-color: $brand-color-black;
   color: $brand-color-medium;
@@ -12,8 +9,6 @@
   z-index: 1000;
   top: 0;
   height: 88px;
-
-
 
   .header__dropdown {
     background-color: $brand-color-black;
@@ -43,7 +38,6 @@
 }
 
 .main {
-  // background-color: $brand-color-black;
   margin-top: 100px;
   position: relative;
   min-height: 100vh;

@@ -6,7 +6,7 @@ import styles from './styles/footer.module.scss'
 
 export default function Footer() {
   return (
-    <footer className="container-fluid content content--theme-light">
+    <footer className="container-fluid content content--theme-light pb-6">
     <h5>Quick Links</h5>
     <ul className={ `${ styles.footer__links } row` }>
       <li className="col-6 col-md-4"><Link href="#">Events</Link></li>

@@ -15,6 +15,11 @@
       margin-right: 0;
       color: inherit;
       border-color: inherit;
+
+      &:hover {
+        border-color:$brand-color-primary;
+        color:$brand-color-primary;
+      }
     }
   }
 }
