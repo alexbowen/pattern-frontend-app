@@ -37,12 +37,12 @@ export default async function Home() {
 
             <div className="col-12 col-md-6">
               <h3 className="font-dark">Reviews & Releases</h3>
-              <Posts offset={0} per_page={2} exclude={0} categories={[39]} tax_relation={'AND'} tabs_context={true} episode_context={[]} />
+              <Posts offset={0} per_page={2} exclude={0} categories={[39]} tax_relation={'AND'} tabs_context={true} episode_context={[]} template={'feature'} />
             </div>
 
             <div className="col-12 col-md-6">
               <h3 className="font-dark">Whats On</h3>
-              <Posts offset={0} per_page={2} exclude={0} categories={[33]} tax_relation={'AND'} tabs_context={true} episode_context={[]} />
+              <Posts offset={0} per_page={2} exclude={0} categories={[33]} tax_relation={'AND'} tabs_context={true} episode_context={[]} template={'feature'} />
             </div>
           </div>
         </Suspense>
