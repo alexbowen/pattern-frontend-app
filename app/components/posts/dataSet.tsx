@@ -52,8 +52,6 @@ export default function DataSet(params: ParamsInt) {
 
   const completeParams = { ...ParamsDefaults, ...params }
 
-  console.log('comparams', completeParams)
-
   const [items, setItems] = useState([]);
 
   const [tabs] = useTabs()

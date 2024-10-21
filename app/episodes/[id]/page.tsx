@@ -26,7 +26,7 @@ export default async function Browse({ params }: { params: { id: string } }) {
           <h1 className="font-dark">{episode.name}</h1>
 
           <div className="d-md-flex">
-            <div className={`${playable.playable} flex-fill`}>
+            <div className={episodeStyles.episode}>
               <div className={episodeStyles.episode__header}>
                 <img
                   srcSet={`${episode.pictures.medium} 100w, ${episode.pictures.large} 300w`}

@@ -13,7 +13,7 @@ export default function Feature({ item }) {
         <p dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}></p>
 
         <Link href={`/posts/${item.id}`}>read more</Link>
-        <Tags tags={item['_embedded']['wp:term'][1]} style={'badge'} />
+        <Tags tags={item['_embedded']['wp:term'][1]} />
       </div>
     </div>
   )

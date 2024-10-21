@@ -15,7 +15,6 @@ $brand-color-medium: #E0E0E0;
 $brand-color-light: #EBEBEB;
 $brand-color-white: #F5F5F5;
 
-
 .content__background {
   position: absolute;
   display: block;
@@ -24,25 +23,17 @@ $brand-color-white: #F5F5F5;
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(rgba(28,28,28,1), rgba(28,28,28,0.6));
-
-  // -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
-  // from(rgba(28,28,28,1)), to(rgba(28,28,28,0)));
+  background: linear-gradient(rgba(28, 28, 28, 1), rgba(28, 28, 28, 0.6));
 }
 
 .content__container {
-
-position: relative;
-z-index: 10;
+  position: relative;
+  z-index: 10;
 }
-
 
 .content {
   padding: 24px 0 74px;
-  // background: rgba(255,255,255,0.8);
-  
-position: relative;
-
+  position: relative;
 
   &__primary {
     background-image: url(/images/brand/patterns_01_tile.png);
@@ -50,13 +41,6 @@ position: relative;
 
   &--theme-dark {
     color: $brand-color-white;
-    
-
-    // background-color: $brand-color-black;
-
-
-    // background: rgba();
-    
 
     .font-dark {
       color: $brand-color-medium;
@@ -70,22 +54,25 @@ position: relative;
       color: $brand-color-white;
     }
 
-    h1,h3, h2 {
+    h1,
+    h3,
+    h2 {
       border-bottom: 1px solid $brand-color-dark;
       padding-bottom: 5px;
       margin-bottom: 20px;
-
     }
 
-
-      h3, h4, h5, p {
-        color: $brand-color-light;
-      }
-
+    h3,
+    h4,
+    h5,
+    p {
+      color: $brand-color-light;
+    }
   }
 
   &--theme-light {
     background-color: $brand-color-light;
+    color: $brand-color-dark;
 
     .font-dark {
       color: $brand-color-black;
@@ -99,22 +86,15 @@ position: relative;
       color: $brand-color-grey;
     }
 
-    h3, h2 {
+    h3,
+    h2 {
       padding-bottom: 5px;
-
       border-bottom: 1px solid $brand-color-grey;
       margin-bottom: 20px;
     }
   }
 }
 
-
-// ::-webkit-input-placeholder { 
-// color: #fff;
-// }
-// ::-moz-placeholder { 
-// color: #fff;
-// }
 .search-focus {
   background: url(/images/brand/icon-search.svg) no-repeat left;
   border: 1px solid transparent;
@@ -131,44 +111,10 @@ position: relative;
     color: $brand-color-light;
   }
 }
-.search-focus:focus{
+
+.search-focus:focus {
   border: 1px solid $brand-color-dark;
   width: 200px;
   padding-left: 50px;
   color: $brand-color-white;
-}
-
-.search-hover {
-  background: url(/images/brand/icon-search.svg) no-repeat left;
-  border: 1px solid $brand-color-light;
-  outline: none;
-  background-size: 22px;
-  background-position: 13px;
-  border-radius: 50px;
-  width: 50px;
-  height: 50px;
-  padding: 25px;
-  transition: all .5s;
-}
-.search-hover:hover{
-  width: 300px;
-  padding-left: 50px;
-  color: $brand-color-primary;
-}
-
-.search-click {
-position: relative;
-overflow: hidden;
-height: 50px;
-}  
-.search-click input {
-background: transparent;
-border: 1px solid $brand-color-light;
-outline: none;
-position: absolute;
-width: 200px;
-height: 50px;
-left: 0%;
-padding: 10px;
-color: $brand-color-white;
 }

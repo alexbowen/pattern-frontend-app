@@ -12,11 +12,7 @@ import getEpisodes from './actions'
 import { useTabs } from '../tabsContext'
 import { useTaxonomy } from '../taxonomyContext'
 
-// export type params = { limit: string, offset: string, q?: string, creator?: string }
-
 export interface ParamsInt { episode_context?: Array<object>, tabs_context?: boolean, pagination_control?: boolean, limit: number, offset: number, heading_text?: string, q?: string, creator?: string, filters?: Array<string> }
-
-// export interface Params  = ...params
 
 const categoryMap = {
   category21: [
@@ -63,8 +59,6 @@ export default function DataSet(params: ParamsInt) {
   const [tabs] = useTabs();
   const [taxonomy] = useTaxonomy();
 
-  // console.log('Episodes dataset - taxonomy, tabs', params.episode_context)
-
   const [ listItems, setListItems ] = useState([]);
 
   const params2 = structuredClone(params)
@@ -78,7 +72,6 @@ export default function DataSet(params: ParamsInt) {
   if (params.episode_context && params.episode_context.length && taxonomy.tags) {
     const tagIds = getTagIds(params.episode_context, taxonomy.tags)
     filters = tagIds.join(',')
-    // console.log('tagIds', tagIds)
   }
 
   const params3 = { ...params2, filters }
@@ -105,6 +98,5 @@ export default function DataSet(params: ParamsInt) {
         <ListComponent items={ listItems } Template={ Item } />
         {params.pagination_control && <Pagination /> }
     </div>
-    
   )
 }

@@ -10,12 +10,11 @@
     display: inline;
     text-transform: capitalize;
 
-    span {
+    a {
       font-size: 0.6rem;
       margin-right: 0;
-      border: none;
-      color: $brand-color-dark;
-      background-color: $brand-color-grey;
+      color: inherit;
+      border-color: inherit;
     }
   }
 }
