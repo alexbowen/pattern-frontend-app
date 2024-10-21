@@ -10,14 +10,15 @@ import { usePlayer } from '../playerContext';
 
 const timeToMinutes = (d) => Math.floor(d * 1000 / 60000)
 
-export default function Item({ item }) {
+export default function Item({ item, active_text }) {
 
   const [cart] = usePlayer();
 
   return (
-    <div id={ item.id } key={ item.id } className={`${ episodeStyles.episode } ${ playable.playable }`}>
-      { cart.id === item.id && <span>active</span>}
+    <div id={ item.id } key={ item.id } className={`${ episodeStyles.episode }`}>
+      
       <div className={ episodeStyles.episode__header }>
+      { cart.id === item.id && <div className={ `${episodeStyles.active} d-flex` }><span>Press play in audio player<br />to listen to { active_text }</span></div>}
         <img
           srcSet={ `${ item.pictures.medium } 100w, ${ item.pictures.large } 300w` }
           sizes="(max-width: 1200px) 100px, 300px"

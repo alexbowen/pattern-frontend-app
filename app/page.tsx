@@ -48,9 +48,12 @@ export default async function Home() {
         </Suspense>
       </div>
 
-      <div className="container-fluid content content--theme-dark">
+      <div className="container-fluid content content__primary content--theme-dark">
+      <div className="content__container">
         <h2 className="font-medium">New Recommended Shows</h2>
         <Episodes offset={0} limit={6} creator={'external'} tabs_context={true} />
+        </div>
+        <span className="content__background"></span>
       </div>
     </div>
   )
