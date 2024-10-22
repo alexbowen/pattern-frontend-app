@@ -53,6 +53,16 @@
     }
   }
 
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $brand-color-primary;
+    }
+  }
+
   &__title {
     border-bottom: 1px solid $brand-color-dark;
     margin-bottom: 10px;

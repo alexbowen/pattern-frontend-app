@@ -28,7 +28,7 @@ export default function Item({ item }) {
         ? <div>
           <h4>{showData(item.name).title}</h4>
           <h4>
-            <Link href={`/episodes/${item.slug}`} className="nav-link mb-1">{showData(item.name).detail}</Link>
+            <Link href={`/episodes/${item.slug}`} className={ `${episodeStyles.episode__link} mb-1` }>{showData(item.name).detail}</Link>
           </h4>
         </div>
         : <div>

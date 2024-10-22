@@ -9,12 +9,12 @@ export default function Footer() {
     <footer className="container-fluid content content--theme-light pb-6">
     <h5>Quick Links</h5>
     <ul className={ `${ styles.footer__links } row` }>
-      <li className="col-6 col-md-4"><Link href="#">Events</Link></li>
-      <li className="col-6 col-md-4"><Link href="#">Reviews</Link></li>
-      <li className="col-6 col-md-4"><Link href="#">Record Shops</Link></li>
-      <li className="col-6 col-md-4"><Link href="#">About</Link></li>
-      <li className="col-6 col-md-4"><Link href="#">Blog</Link></li>
-      <li className="col-6 col-md-4"><Link href="#">Contact</Link></li>
+      <li className="col-6 col-md-4"><Link href="#" className="link-secondary">Events</Link></li>
+      <li className="col-6 col-md-4"><Link href="#" className="link-secondary">Reviews</Link></li>
+      <li className="col-6 col-md-4"><Link href="#" className="link-secondary">Record Shops</Link></li>
+      <li className="col-6 col-md-4"><Link href="/about" className="link-secondary">About</Link></li>
+      <li className="col-6 col-md-4"><Link href="/posts" className="link-secondary">Blog</Link></li>
+      <li className="col-6 col-md-4"><Link href="/contact" className="link-secondary">Contact</Link></li>
     </ul>
     <div className="row">
       <div className="col-12 col-md-6">

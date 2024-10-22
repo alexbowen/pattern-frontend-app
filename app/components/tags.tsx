@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 import tagStyles from './styles/tags.module.scss'
 
 export default function Tags({ tags }) {
@@ -7,7 +9,7 @@ export default function Tags({ tags }) {
     <ul className={`${tagStyles.tags} ps-0`}>
       {tags.map((tag, key) => (
         <li key={key}>
-          <a className="btn badge me-2">{tag.name || tag}</a>
+          <Link href={`/episodes?q=${tag.name || tag}`} className="btn badge me-2">{tag.name || tag}</Link>
         </li>
       ))}
     </ul>

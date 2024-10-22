@@ -62,7 +62,7 @@ export default function DataSet(params: ParamsInt) {
   useEffect(() => {
     const fetchData = async () => {
 
-      const url = new URL(`https://pattern-frontend-app-a4f7fa601daf.herokuapp.com/api/blog`)
+      const url = new URL(`https://pattern-frontend-app-a4f7fa601daf.herokuapp.com//api/blog`)
       const searchParams = url.searchParams
 
       let allCategories
@@ -103,7 +103,7 @@ export default function DataSet(params: ParamsInt) {
       {params.pagination_control && <Pagination /> }
       <ul className={`row g-4 ${styles.list}`}>
         {items.map((item, key) => (
-          <li className="col-12 col-xl-6 playable" key={key}>
+          <li className="col-12 col-md-6 playable" key={key}>
             <ItemTemplate item={item} />
           </li>
         ))}

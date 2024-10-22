@@ -7,7 +7,7 @@ const getPosts = async (id) => {
 
   console.log(process.env)
 
-  const postsResponse = await fetch(`https://pattern-frontend-app-a4f7fa601daf.herokuapp.com/api/blog/${id}`, { cache: 'no-store' });
+  const postsResponse = await fetch(`https://pattern-frontend-app-a4f7fa601daf.herokuapp.com//api/blog/${id}`, { cache: 'no-store' });
 
   return postsResponse.json()
 }
@@ -30,7 +30,7 @@ export default async function Browse({ params }: { params: { id: string } }) {
             <p dangerouslySetInnerHTML={{ __html: item.content }}></p>
           </div>
           <div className="d-flex">
-            {item.customFields.length ? <span className="flex-fill"><a className="btn btn-outline-light" href={getCustomField(item.customFields, 'link:url').value}>{getCustomField(item.customFields, 'link:title').value}</a></span> : ''}
+            {item.customFields.length ? <span className="flex-fill"><a className="btn btn-outline-light" target="_blank" href={getCustomField(item.customFields, 'link:url').value}>{getCustomField(item.customFields, 'link:title').value}</a></span> : ''}
             <Tags tags={item.terms.filter(t => t.taxonomy === 'post_tag')} />
           </div>
         </div>

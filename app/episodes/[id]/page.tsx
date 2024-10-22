@@ -8,7 +8,7 @@ import episodeStyles from '../../components/episodes/styles/episode.module.scss'
 import playable from '../../components/episodes/styles/playable.module.scss'
 
 const getEpisode = async (id) => {
-  const episodeResponse = await fetch(`https://pattern-frontend-app-a4f7fa601daf.herokuapp.com/api/episode/${id}`, {
+  const episodeResponse = await fetch(`https://pattern-frontend-app-a4f7fa601daf.herokuapp.com//api/episode/${id}`, {
     method: 'GET',
   })
 
@@ -25,15 +25,14 @@ export default async function Browse({ params }: { params: { id: string } }) {
         <div className="content__container">
           <h1 className="font-dark">{episode.name}</h1>
 
-          <div className="d-md-flex">
+          <div className="d-flex">
             <div className={episodeStyles.episode}>
               <div className={episodeStyles.episode__header}>
                 <img
                   srcSet={`${episode.pictures.medium} 200w, ${episode.pictures.large} 300w`}
                   sizes="(max-width: 1200px) 200px, 300px"
                   src={episode.pictures.large}
-                  alt={episode.name}
-                  className=" float-start float-md-none" />
+                  alt={episode.name} />
 
                 {/* <Image className="card-img-top" src={ episode.pictures.large } alt={ episode.name } width={300} height={300} /> */}
                 <div className={`${episodeStyles.playable__button} ${playable.playable__button}`}>
@@ -53,10 +52,21 @@ export default async function Browse({ params }: { params: { id: string } }) {
         </div>
         <span className="content__background"></span>
       </div>
+      
 
       <div className="container-fluid content content--theme-light">
-        <h2 className="font-dark">Related Reading</h2>
-        <Posts heading_text={'Related reading'} episode_context={episode.tags} per_page={2} template={'feature'} exclude={episode.id} offset={2} categories={[]} tax_relation={'OR'} />
+      <div className="row">
+
+<div className="col-12">
+  <h2 className="font-dark">Reviews & Releases</h2>
+  <Posts offset={0} per_page={2} exclude={0} categories={[39]} tax_relation={'AND'} tabs_context={true} episode_context={[]} template={'feature'} />
+</div>
+
+<div className="col-12">
+  <h2 className="font-dark">Whats On</h2>
+  <Posts offset={0} per_page={2} exclude={0} categories={[33]} tax_relation={'AND'} tabs_context={true} episode_context={[]} template={'feature'} />
+</div>
+</div>
       </div>
 
       <div className="container-fluid content content--theme-dark">

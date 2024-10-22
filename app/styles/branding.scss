@@ -54,9 +54,7 @@ $brand-color-white: #F5F5F5;
       color: $brand-color-white;
     }
 
-    h1,
-    h3,
-    h2 {
+    h1 {
       border-bottom: 1px solid $brand-color-dark;
       padding-bottom: 5px;
       margin-bottom: 20px;
@@ -86,7 +84,6 @@ $brand-color-white: #F5F5F5;
       color: $brand-color-grey;
     }
 
-    h3,
     h2 {
       padding-bottom: 5px;
       border-bottom: 1px solid $brand-color-grey;
