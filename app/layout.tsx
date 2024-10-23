@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import Link from 'next/link'
-import localFont from 'next/font/local'
+
 import { Suspense } from 'react'
 
 import PlayerProvider from "./components/playerContext";
