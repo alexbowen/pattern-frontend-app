@@ -12,16 +12,19 @@ function LoadingFallback() {
 export default async function Home() {
   return (
     <div>
-      <div className="container-fluid">
-        <div className={`row mb-1`}>
-        <div className="col-12 p-3 content content--theme-light">
+
+      
+      <div className="container-fluid content content--theme-light">
+        
 
 <p>stream ui</p>
 
-</div>
-          <Tabs />
 
-        </div>
+      </div>
+
+      <div className="container-fluid">
+      <Tabs />
+
       </div>
 
       <div className="container-fluid content content__primary content--theme-dark">

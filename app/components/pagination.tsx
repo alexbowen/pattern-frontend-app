@@ -5,8 +5,10 @@ import Link from 'next/link'
 export default function Pagination() {
 
   return (
-    <div className={ styles.pagination }>
-      <ul>
+    <div className={ `${styles.pagination} row d-flex` }>
+      <span className={ `${styles.pagination__status} col-12 col-md-6 ` }><span>Showing 7-12 of 120 results</span></span>
+      <div className= "col-12 col-md-6">
+        <ul>
         <li><Link href="#">&lt;&lt;</Link></li>
         <li><Link href="#">&lt;</Link></li>
         <li className={ styles.page }><Link href="#">1</Link></li>
@@ -15,6 +17,7 @@ export default function Pagination() {
         <li><Link href="#">&gt;</Link></li>
         <li><Link href="#">&gt;&gt;</Link></li>
       </ul>
+      </div>
     </div>
   )
   

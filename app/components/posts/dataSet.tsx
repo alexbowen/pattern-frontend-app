@@ -67,6 +67,8 @@ export default function DataSet(params: ParamsInt) {
 
       let allCategories
 
+      console.log('completeParams', completeParams)
+
       searchParams.set('exclude', completeParams.exclude.toString())
       searchParams.set('offset', completeParams.offset.toString())
       searchParams.set('per_page', completeParams.per_page.toString())

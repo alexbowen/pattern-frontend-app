@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import Link from 'next/link'
+import localFont from 'next/font/local'
 import { Suspense } from 'react'
 
 import PlayerProvider from "./components/playerContext";
@@ -13,6 +14,11 @@ import SocialToolbar from './components/social'
 import Footer from './components/footer'
 import Player from './components/player'
 import Search from './components/search'
+
+const myFont = localFont({
+  src: '../public/fonts/BebasNeue-Regular.ttf',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.patternradio.net'),

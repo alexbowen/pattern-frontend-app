@@ -3,16 +3,20 @@
 .pagination {
   color: $brand-color-light;
   text-align: right;
+
+  .pagination__status {
+    text-align: left;
+  }
   ul {
     list-style-type: none;
     padding: 0;
     margin-bottom: 20px;
   
     li {
-      border: 1px solid $brand-color-medium;
-      border-radius: 2em;
-      width: 2em;
-      height: 2em;
+
+      border-radius: 1.4em;
+      width: 1.4em;
+      height: 1.4em;
       display: inline-flex;
       margin: 0 5px;
 
@@ -30,6 +34,7 @@
 
       &.page {
         margin: 0 10px;
+        border: 1px solid $brand-color-medium;
         background-color: $brand-color-dark;
       }
 

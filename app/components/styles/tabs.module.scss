@@ -3,8 +3,8 @@
 .tabs {
   display: flex;
   list-style-type: none;
-  padding-bottom: 0;
-  margin-bottom: 0;
+  padding: 0;
+  margin: 0;
 
   li {
 
@@ -17,28 +17,28 @@
       cursor: pointer;
 
       &:hover {
-        background-color: $brand-color-medium;
+        // background-color: $brand-color-medium;
 
         .tabsDetail {
-          color: $brand-color-dark;
+          color: $brand-color-light;
         }
 
         .tabsTitle {
-          color: $brand-color-black;
+          color: $brand-color-medium;
         }
       }
 
       border: 0;
       width: 100%;
       text-align: left;
-      padding: 5px 10px;
+      padding: 5px 0;
 
       .tabsDetail {
-        color: $brand-color-medium;
+        color: $brand-color-grey;
       }
 
       .tabsTitle {
-        color: $brand-color-white;
+        color: $brand-color-grey;
       }
 
       background-color: $brand-color-black;
@@ -66,6 +66,6 @@
       color: $brand-color-primary;
     }
 
-    background-color: $brand-color-dark;
+    // background-color: $brand-color-dark;
   }
 }
