@@ -95,8 +95,7 @@ export default function DataSet(params: ParamsInt) {
   return (
     <div>
       {params.pagination_control && <Pagination /> }
-        <ListComponent items={ listItems } Template={ Item } />
-
+      <ListComponent items={ listItems } Template={ Item } />
     </div>
   )
 }

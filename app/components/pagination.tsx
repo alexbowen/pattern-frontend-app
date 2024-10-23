@@ -6,8 +6,7 @@ export default function Pagination() {
 
   return (
     <div className={ `${styles.pagination} row d-flex` }>
-      <span className={ `${styles.pagination__status} col-12 col-md-6 ` }><span>Showing 7-12 of 120 results</span></span>
-      <div className= "col-12 col-md-6">
+            <div className= "col-12 col-md-6 text-start">
         <ul>
         <li><Link href="#">&lt;&lt;</Link></li>
         <li><Link href="#">&lt;</Link></li>
@@ -18,6 +17,8 @@ export default function Pagination() {
         <li><Link href="#">&gt;&gt;</Link></li>
       </ul>
       </div>
+      <span className={ `${styles.pagination__status} col-12 col-md-6 text-start text-md-end` }><span>Showing 7-12 of 120 results</span></span>
+
     </div>
   )
   

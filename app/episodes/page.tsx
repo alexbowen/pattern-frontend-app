@@ -16,21 +16,15 @@ export default function Browse({ searchParams }) {
       </div>
 
       <div className="container-fluid content content--theme-light">
-
-        <div className="row">
-
-          <div className="col-12 col-md-6">
-            <h2 className="font-dark">Reviews & Releases</h2>
-            <Posts offset={0} per_page={2} exclude={0} categories={[39]} tax_relation={'AND'} tabs_context={true} episode_context={[]} template={'feature'} />
-          </div>
-
-          <div className="col-12 col-md-6">
-            <h2 className="font-dark">Whats On</h2>
-            <Posts offset={0} per_page={2} exclude={0} categories={[33]} tax_relation={'AND'} tabs_context={true} episode_context={[]} template={'feature'} />
-          </div>
-        </div>
+      <h2 className="font-dark">Reviews & Releases</h2>
+      <Posts offset={0} per_page={2} exclude={0} categories={[39]} tax_relation={'AND'} tabs_context={true} episode_context={[]} template={'feature'} />
 
       </div>
+
+      <div className="container-fluid content content--theme-dark">
+      <h2 className="font-dark">Whats On</h2>
+      <Posts offset={0} per_page={2} exclude={0} categories={[33]} tax_relation={'AND'} tabs_context={true} episode_context={[]} template={'feature'} />
       </div>
-      )
+    </div>
+  )
 }
