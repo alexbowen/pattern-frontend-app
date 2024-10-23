@@ -15,7 +15,7 @@ export default function Browse({ searchParams }) {
         <span className="content__background"></span>
       </div>
 
-      <div className="container-fluid content content--theme-dark">
+      <div className="container-fluid content content--theme-light">
 
         <div className="row">
 
