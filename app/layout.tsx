@@ -15,10 +15,7 @@ import Footer from './components/footer'
 import Player from './components/player'
 import Search from './components/search'
 
-const myFont = localFont({
-  src: '../public/fonts/BebasNeue-Regular.ttf',
-  display: 'swap',
-})
+
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.patternradio.net'),
