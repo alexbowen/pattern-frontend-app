@@ -25,23 +25,24 @@ export default async function Browse({ params }: { params: { id: string } }) {
         <div className="content__container">
           <h1 className="font-dark">{episode.name}</h1>
 
-          <div className="d-flex">
+          <div className="row">
 
-              <div className={episodeStyles.episode__header}>
+              <div className={ `${episodeStyles.episode__header} col-12 col-md-4 mb-3` }>
                 <img
-                  srcSet={`${episode.pictures.medium} 200w, ${episode.pictures.large} 300w`}
-                  sizes="(max-width: 1200px) 200px, 300px"
                   src={episode.pictures.large}
-                  alt={episode.name} />
+                  alt={episode.name}
+                  className="img-fluid"
+                />
 
-                {/* <Image className="card-img-top" src={ episode.pictures.large } alt={ episode.name } width={300} height={300} /> */}
+
                 <div className={`${episodeStyles.playable__button} ${playable.playable__button}`}>
                   <Play url={episode.key} id={episode.id} />
                 </div>
               </div>
 
-
-            <p className="ms-3">{episode.description}</p>
+<div className="col-12 col-md-8">
+            <p className="">{episode.description}</p>
+            </div>
 
           </div>
 

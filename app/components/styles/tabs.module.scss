@@ -10,8 +10,14 @@
 
     display: flex;
     flex-grow: 1;
+    width: 50%;
     border-bottom: 1px solid $brand-color-dark;
     border-top: 1px solid $brand-color-dark;
+    padding-left: 24px;
+
+    &:first-child {
+      padding-left: 0;
+    }
 
     >button {
       cursor: pointer;

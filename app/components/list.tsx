@@ -8,7 +8,7 @@ export default function List({ items = [], Template }) {
   return (
     <ul className={`row ${styles.list}`}>
       {items.map((item, key) => (
-        <li className="col-6 col-md-4 col-xl-2 playable" key={key}>
+        <li className="col-6 col-md-4 col-xl-2 mt-md-5 playable" key={key}>
           <Template item={item} />
         </li>
       ))}

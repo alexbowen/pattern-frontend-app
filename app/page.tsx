@@ -13,24 +13,26 @@ export default async function Home() {
   return (
     <div>
 
-      
+
       <div className="container-fluid content content--theme-light">
-        
-
-<p>stream ui</p>
-
-
+        <div className="row">
+        <div className="col-12 col-md-6">
+          stream
+          </div>
+          <div className="col-12 col-md-6">
+schedule
+          </div>
+        </div>
       </div>
 
       <div className="container-fluid">
-      <Tabs />
-
+        <Tabs />
       </div>
 
       <div className="container-fluid content content__primary content--theme-dark">
         <div className="content__container">
           <h1 className="font-medium">New On Pattern Radio</h1>
-          <Episodes offset={0} limit={ 6 } creator={'internal'} tabs_context={true} />
+          <Episodes offset={0} limit={6} creator={'internal'} tabs_context={true} />
         </div>
         <span className="content__background"></span>
       </div>
@@ -53,9 +55,9 @@ export default async function Home() {
       </div>
 
       <div className="container-fluid content content__primary content--theme-dark">
-      <div className="content__container">
-        <h2 className="font-medium">New Recommended Shows</h2>
-        <Episodes offset={0} limit={6} creator={'external'} tabs_context={true} />
+        <div className="content__container">
+          <h2 className="font-medium">New Recommended Shows</h2>
+          <Episodes offset={0} limit={6} creator={'external'} tabs_context={true} />
         </div>
         <span className="content__background"></span>
       </div>
